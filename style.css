@@ -1,13 +1,11 @@
-/* --- PALETA DE CORES FLUIR ENGENHARIA --- */
+/* --- PALETA DE AZUIS FLUIR ENGENHARIA --- */
 :root {
     --azul-logo: #002258;
     --azul-claro: #3a6edc;
-    --marrom: #995831;
-    --neutro-escuro: #23272A;
-    --neutro-medio: #f4f6fa;
-    --neutro-claro: #f5f5f5;
-    --neutro-branco: #fff;
-    --destaque: #eab543;
+    --azul-medio: #0050b3;
+    --azul-escuro: #00153a;
+    --azul-pastel: #e3ecfa;
+    --dourado: rgba(170,108,51,1)
 }
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 * {
@@ -16,9 +14,44 @@
     box-sizing: border-box;
     font-family: 'Montserrat', Arial, sans-serif;
 }
+/* Clientes Section */
+.clientes {
+    background: var(--azul-logo);
+    padding: 60px 0;
+}
+.clientes .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.clientes-logos {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 32px;
+}
+.clientes-logos img {
+    height: 64px;
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+    transition: opacity 0.2s;
+}
+.clientes-logos img:hover {
+    opacity: 1;
+}
+.clientes .section-title {
+    color: var(--dourado);
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 24px;
+}
 body {
-    background: var(--neutro-medio);
-    color: var(--neutro-escuro);
+    padding-top: 72px; /* espaço para o header fixo */
+    background: var(--azul-pastel);
+    color: var(--azul-logo);
     line-height: 1.6;
 }
 .container {
@@ -27,8 +60,13 @@ body {
     padding: 0 20px;
 }
 header {
-    background: linear-gradient(90deg, var(--azul-logo) 80%, var(--marrom) 100%);
-    color: var(--neutro-branco);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 34, 88, 0.8);
+    color: #fff;
     padding: 0;
     box-shadow: 0 2px 12px rgba(0,34,88,0.08);
 }
@@ -94,7 +132,7 @@ header .container {
     display: none;
 }
 .hero {
-    background: linear-gradient(90deg, var(--azul-logo) 60%, var(--azul-claro) 100%);
+    background: var(--azul-logo);
     color: var(--neutro-branco);
     padding: 64px 0 48px 0;
     min-height: 48vh;
@@ -102,6 +140,30 @@ header .container {
     align-items: center;
     position: relative;
     text-align: center;
+}
+.hero .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    position: relative;
+    z-index: 1;
+}
+.hero-content {
+    flex: 1 1 50%;
+    text-align: left;
+}
+.hero-content h2,
+.hero-content h1,
+.hero-content p {
+    color: #fff;
+}
+.hero-image {
+    flex: 1 1 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
 .hero h2 {
     font-size: 3rem;
@@ -118,7 +180,7 @@ header .container {
 .btn, .btn-primary, .btn-secondary {
     display: inline-block;
     padding: 1rem 2.2rem;
-    border: none;
+    border: 1px solid #00153a;
     border-radius: 8px;
     font-size: 1rem;
     font-weight: 600;
@@ -130,12 +192,14 @@ header .container {
     transition: background 0.2s, color 0.2s;
 }
 .btn-primary {
-    background: linear-gradient(90deg, var(--azul-logo) 60%, var(--marrom) 100%);
-    color: var(--neutro-branco);
+  background: var(--azul-logo);
+    color: var(--dourado);
+    border-color: var(--dourado);
 }
 .btn-primary:hover {
-    background: var(--marrom);
-    color: var(--neutro-branco);
+    background: var(--dourado);
+    color: var(--azul-logo);
+    border-color: var(--dourado);
 }
 .btn-secondary {
     background: var(--neutro-branco);
@@ -419,4 +483,7 @@ footer {
         gap: 32px;
         align-items: center;
     }
+}
+h2.section-subtitle {
+    color: var(--dourado);
 }

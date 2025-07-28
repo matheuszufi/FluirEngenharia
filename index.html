@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fluir Engenharia - Projetos Hidráulicos</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
     <!-- Header -->
     <header class="header">
@@ -44,31 +49,51 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Imagem opcional -->
+                <img src="images/projhydro1.png" alt="Projeto Hidráulico" style="max-width:100%;height:auto;border-radius:12px;">
+            </div>
+        </div>
+    </section>
+        <!-- Triangular transition -->
+    <div style="width:100%;overflow:hidden;line-height:0;position:relative;top:-1px;">
+      <svg viewBox="0 0 100 10" preserveAspectRatio="none" style="display:block;width:100%;height:40px;">
+        <polygon fill="#002258" points="0,0 100,0 60,10" />
+      </svg>
+    </div>
+
+    <!-- Services Section -->
+    <section id="servicos" class="servicos">
+        <div class="container">
+            <h3>Serviços</h3>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon" style="font-size:2.5rem;color:var(--azul-logo);margin-bottom:18px;"><i class="fas fa-home"></i></div>
+                    <h4>Residenciais</h4>
+                    <p>Projetos hidráulicos completos para casas, condomínios e edifícios residenciais.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="font-size:2.5rem;color:var(--azul-logo);margin-bottom:18px;"><i class="fas fa-store"></i></div>
+                    <h4>Comerciais</h4>
+                    <p>Soluções técnicas para estabelecimentos comerciais, lojas e escritórios.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="font-size:2.5rem;color:var(--azul-logo);margin-bottom:18px;"><i class="fas fa-industry"></i></div>
+                    <h4>Industriais</h4>
+                    <p>Desenvolvimento de sistemas hidráulicos industriais, com foco em segurança, eficiência e sustentabilidade.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicos" class="services">
+    <!-- Clientes Section -->
+    <section id="clientes" class="clientes">
         <div class="container">
-            <h2>Serviços</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-home"></i></div>
-                    <h3>Residenciais</h3>
-                    <p>Projetos hidráulicos completos para casas, condomínios e edifícios residenciais.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-store"></i></div>
-                    <h3>Comerciais</h3>
-                    <p>Soluções técnicas para estabelecimentos comerciais, lojas e escritórios.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fas fa-industry"></i></div>
-                    <h3>Industriais</h3>
-                    <p>Desenvolvimento de sistemas hidráulicos industriais, com foco em segurança, eficiência e sustentabilidade.</p>
-                </div>
+            <h2 class="section-title">Clientes</h2>
+            <h2 class="section-subtitle">Atendidos</h2>
+            <div class="clientes-logos" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;align-items:center;">
+                <img src="images/cliente1.png" alt="Cliente 1" style="height:60px;max-width:160px;object-fit:contain;">
+                <img src="images/cliente2.png" alt="Cliente 2" style="height:60px;max-width:160px;object-fit:contain;">
+                <img src="images/cliente3.png" alt="Cliente 3" style="height:60px;max-width:160px;object-fit:contain;">
+                <!-- Adicione mais logos conforme necessário -->
             </div>
         </div>
     </section>
@@ -183,3 +208,4 @@
 
     <script src="script.js"></script>
 </body>
+</html>
