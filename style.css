@@ -382,8 +382,8 @@ body {
 
 .btn-secondary {
     text-decoration: none;
-    background: rgba(0, 0, 0, 0.458);
-    color: rgb(255, 255, 255);
+    background: rgb(255, 255, 255);
+    color: var(--azul-logo) ;
     border: 2px solid var(--azul-logo);
     border-radius: 8px;
     font-weight: 700;
