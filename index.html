@@ -46,7 +46,7 @@
             <div class="hero-content">
                 <h2>Fluir Engenharia</h2>
           
-                <p><span class="highlight">Soluções em Instalações</span><br> Soluções seguras e inovadoras para o seu empreendimento. Atendimento personalizado e foco em <span class="highlight">eficiência</span> e <span class="highlight">sustentabilidade</span>.</p>
+                <p><span class="highlight">Excelência em Projetos Hidráulicos</span><br> Soluções inovadoras e sustentáveis para sua obra. Expertise técnica, tecnologia de ponta e atendimento personalizado para <span class="highlight">resultados excepcionais</span> e <span class="highlight">eficiência comprovada</span>.</p>
                 <div class="hero-buttons">
                     <a href="#contato" class="btn-primary">Solicite um orçamento</a>
                     <a href="equipe.html" class="btn-secondary">Nossa Equipe</a>
@@ -62,23 +62,24 @@
     <!-- Services Section -->
     <section id="servicos" class="servicos">
         <div class="container">
-            <h3>SERVIÇOS</h3>
+            <h3>Nossos Serviços</h3>
+            <p class="servicos-subtitle">Oferecemos soluções completas em engenharia hidráulica, com foco em excelência técnica, inovação e sustentabilidade para cada projeto.</p>
             <div class="servicos-underline"></div>
             <div class="cards">
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-home"></i></div>
-                    <h4>Residenciais</h4>
-                    <p>Projetos hidráulicos completos para casas, condomínios e edifícios residenciais.</p>
+                    <h4>Projetos Residenciais</h4>
+                    <p>Sistemas hidráulicos completos para residências, condomínios e edifícios, com foco em eficiência e sustentabilidade.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-store"></i></div>
-                    <h4>Comerciais</h4>
-                    <p>Soluções técnicas para estabelecimentos comerciais, lojas e escritórios.</p>
+                    <div class="card-icon"><i class="fas fa-building"></i></div>
+                    <h4>Projetos Comerciais</h4>
+                    <p>Soluções técnicas especializadas para estabelecimentos comerciais, shopping centers e complexos corporativos.</p>
                 </div>
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-industry"></i></div>
-                    <h4>Industriais</h4>
-                    <p>Desenvolvimento de sistemas hidráulicos industriais, com foco em segurança, eficiência e sustentabilidade.</p>
+                    <h4>Projetos Industriais</h4>
+                    <p>Desenvolvimento de sistemas hidráulicos industriais complexos, com tecnologia avançada e máxima segurança operacional.</p>
                 </div>
             </div>
         </div>
@@ -87,34 +88,66 @@
       <!-- Projects Section -->
     <section id="projetos" class="portfolio">
         <div class="container">
-            <h3>PROJETOS</h3>
+            <h3>Nossos Projetos</h3>
+            <p class="portfolio-subtitle">Conheça alguns dos nossos trabalhos mais relevantes, que demonstram nossa capacidade técnica e compromisso com a excelência em engenharia hidráulica.</p>
              <div class="servicos-underline"></div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <img src="images/portfolio/urbanedge.png" alt="Projeto Residencial" class="portfolio-img">
-                    <h4>Residencial - Condomínio Águas Claras</h4>
-                    <p>Projeto hidráulico completo para condomínio de alto padrão, com soluções de reuso e eficiência hídrica.</p>
+            
+            <!-- Carousel Container -->
+            <div class="portfolio-carousel">
+                <div class="carousel-container">
+                    <div class="portfolio-grid" id="portfolioCarousel">
+                        <div class="portfolio-card">
+                            <img src="images/portfolio/urbanedge.png" alt="Projeto Residencial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Residencial Águas Claras</h4>
+                                <p>Projeto hidráulico completo para condomínio de alto padrão, com soluções de reuso e eficiência hídrica, resultando em 30% de economia no consumo de água.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Shopping Center Premium</h4>
+                                <p>Instalação de sistemas hidráulicos eficientes para centro comercial, priorizando economia e sustentabilidade com tecnologias de ponta.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Fábrica de Alimentos</h4>
+                                <p>Desenvolvimento de soluções hidráulicas industriais, com foco em segurança alimentar e processos automatizados de última geração.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Complexo Industrial Mumajo</h4>
+                                <p>Sistema hidráulico integrado para complexo industrial, incorporando soluções sustentáveis e tecnologia de monitoramento em tempo real.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="portfolio-card">
-                    <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
-                    <h4>Comercial - Shopping Center</h4>
-                    <p>Instalação de sistemas hidráulicos eficientes para centro comercial, priorizando economia e sustentabilidade.</p>
+                
+                <!-- Carousel Controls -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn carousel-prev" id="prevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn carousel-next" id="nextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
-                <div class="portfolio-card">
-                    <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
-                    <h4>Industrial - Fábrica de Alimentos</h4>
-                    <p>Desenvolvimento de soluções hidráulicas industriais, com foco em segurança e processos automatizados.</p>
+                
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators" id="carouselIndicators">
+                    <span class="indicator active" data-slide="0"></span>
+                    <span class="indicator" data-slide="1"></span>
+                    <span class="indicator" data-slide="2"></span>
+                    <span class="indicator" data-slide="3"></span>
                 </div>
-                <div class="portfolio-card">
-                    <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
-                    <h4>Mumajo</h4>
-                    <p>Desenvolvimento de soluções hidráulicas industriais, com foco em segurança e processos automatizados.</p>
-                </div>
-
-                <!-- Adicione mais cards de projetos conforme necessário -->
             </div>
-            <div style="text-align:center;padding:64px;">
-                <a href="portfolio.html" class="btn-primary">Ver todos os projetos</a>
+            
+            <div class="portfolio-cta">
+                <a href="portfolio.html" class="btn-primary">Ver Todos os Projetos</a>
             </div>
         </div>
     </section>
@@ -129,16 +162,17 @@
     <!-- Clientes Section -->
     <section id="clientes" class="clientes">
         <div class="container">
-            <h2 class="section-title">CLIENTES</h2>
-            <h2 class="section-subtitle">ATENDIDOS</h2>
-            <div class="clientes-logos" style="display:flex;flex-wrap:wrap;gap:32px;justify-content:center;align-items:center;">
+            <h2 class="section-title">Clientes</h2>
+            <h2 class="section-subtitle">Parceiros de Confiança</h2>
+            <p class="clientes-description">Orgulhamo-nos de trabalhar com as principais empresas do mercado, desenvolvendo soluções que superam expectativas e geram resultados excepcionais.</p>
+            <div class="clientes-logos">
                 <img src="images/clients/mrv.png" alt="MRV Logo" class="cliente-logo">
-                <img src="images/clients/gnd.jpg" alt="GND Logo">
+                <img src="images/clients/gnd.jpg" alt="GND Logo" class="cliente-logo">
                 <img src="images/clients/bild.jpg" alt="Bild Logo" class="cliente-logo">
                 <img src="images/clients/graal_engenharia_logo.jpg" alt="Graal Engenharia Logo" class="cliente-logo">
                 <img src="images/clients/pridecontrutora.png" alt="Pride Construtora Logo" class="cliente-logo">
                 <img src="images/clients/wegg_logo.jpg" alt="Wegg Logo" class="cliente-logo">
-                <img    src="images/clients/logo_a-yoshii-engenharia.png" alt="Ayoshi Logo" class="cliente-logo">
+                <img src="images/clients/logo_a-yoshii-engenharia.png" alt="Ayoshi Logo" class="cliente-logo">
                 <img src="images/clients/logo_yticon-contrucao-e-incorporacao.png" alt="Yticon Logo" class="cliente-logo">
                 <img src="images/clients/taec_construtora_logo.jpg" alt="Taec Construtora Logo" class="cliente-logo">
                 <img src="images/clients/gadens.png" alt="Gadens Logo" class="cliente-logo">
@@ -155,14 +189,16 @@
     <!-- Contact Section -->
     <section id="contato" class="contact">
         <div class="container">
-            <h2>Fale Conosco</h2>
+            <h2>Entre em Contato</h2>
+            <p class="contact-subtitle">Estamos prontos para desenvolver a solução perfeita para o seu projeto. Entre em contato conosco e descubra como podemos ajudar.</p>
             <div class="contact-content">
                 <div class="contact-info">
+                    <h3 class="contact-info-title">Informações de Contato</h3>
                     <div class="contact-item">
                         <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
                         <div>
                             <h4>Endereço</h4>
-                            <p>Rua Exemplo, 123<br>Cidade - Estado</p>
+                            <p>Rua Exemplo, 123<br>Cidade - Estado, CEP 00000-000</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -181,8 +217,9 @@
                     </div>
                 </div>
                 <form class="contact-form" id="contactForm">
+                    <h3 class="contact-form-title">Envie sua Mensagem</h3>
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                        <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
                     </div>
                     <div class="form-group">
                         <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
@@ -191,7 +228,7 @@
                         <input type="tel" id="phone" name="phone" placeholder="Seu telefone">
                     </div>
                     <div class="form-group">
-                        <textarea id="message" name="message" placeholder="Sua mensagem" rows="5" required></textarea>
+                        <textarea id="message" name="message" placeholder="Descreva seu projeto ou dúvida" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn-primary">Enviar Mensagem</button>
                 </form>
@@ -252,6 +289,16 @@
 
     <script src="script.js"></script>
     <script>
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
     // Alterna as imagens do hero
     let heroCurrent = 0;
     const heroImgs = document.querySelectorAll('.hero-bg-img');
@@ -259,13 +306,186 @@
         heroImgs[0].style.opacity = '1';
         heroImgs[1].style.opacity = '0';
         setInterval(() => {
-            heroImgs[heroCurrent].style.transition = 'opacity 1s';
-            heroImgs[1-heroCurrent].style.transition = 'opacity 1s';
+            heroImgs[heroCurrent].style.transition = 'opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            heroImgs[1-heroCurrent].style.transition = 'opacity 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
             heroImgs[heroCurrent].style.opacity = '0';
             heroImgs[1-heroCurrent].style.opacity = '1';
             heroCurrent = 1 - heroCurrent;
+        }, 6000);
+    }
+
+    // Smooth scroll para links de navegação
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetSection.offsetTop - headerHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Menu hambúrguer
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+    
+    // Fechar menu ao clicar em um link
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+    
+    // Fechar menu ao clicar fora dele
+    document.addEventListener('click', function(e) {
+        if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        }
+    });
+    
+    // ========== PORTFOLIO CAROUSEL ==========
+    let currentSlide = 0;
+    const carousel = document.getElementById('portfolioCarousel');
+    const cards = document.querySelectorAll('.portfolio-card');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const totalSlides = cards.length;
+    
+    // Calcula quantos cards mostrar por vez baseado na largura da tela
+    function getVisibleCards() {
+        const screenWidth = window.innerWidth;
+        if (screenWidth < 768) return 1;
+        if (screenWidth < 1024) return 2;
+        return 3;
+    }
+    
+    // Atualiza a posição do carrossel
+    function updateCarousel() {
+        const visibleCards = getVisibleCards();
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 24; // 1.5rem = 24px
+        const offset = currentSlide * cardWidth;
+        
+        carousel.style.transform = `translateX(-${offset}px)`;
+        
+        // Atualiza indicadores
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentSlide);
+        });
+        
+        // Controla visibilidade dos botões
+        if (prevBtn && nextBtn) {
+            prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
+            nextBtn.style.opacity = currentSlide >= totalSlides - 1 ? '0.5' : '1';
+        }
+    }
+    
+    // Próximo slide
+    function nextSlide() {
+        if (currentSlide < totalSlides - 1) {
+            currentSlide++;
+            updateCarousel();
+        }
+    }
+    
+    // Slide anterior
+    function prevSlide() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            updateCarousel();
+        }
+    }
+    
+    // Event listeners para botões
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    
+    // Event listeners para indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentSlide = index;
+            updateCarousel();
+        });
+    });
+    
+    // Suporte a touch/swipe para mobile
+    let startX = 0;
+    let endX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+    
+    carousel.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        const diff = startX - endX;
+        const threshold = 50;
+        
+        if (Math.abs(diff) > threshold) {
+            if (diff > 0) {
+                nextSlide();
+            } else {
+                prevSlide();
+            }
+        }
+    }
+    
+    // Auto-play (opcional)
+    let autoPlayInterval;
+    
+    function startAutoPlay() {
+        autoPlayInterval = setInterval(() => {
+            if (currentSlide >= totalSlides - 1) {
+                currentSlide = 0;
+            } else {
+                currentSlide++;
+            }
+            updateCarousel();
         }, 5000);
     }
+    
+    function stopAutoPlay() {
+        clearInterval(autoPlayInterval);
+    }
+    
+    // Inicia autoplay e pausa ao interagir
+    const carouselContainer = document.querySelector('.portfolio-carousel');
+    if (carouselContainer) {
+        startAutoPlay();
+        
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+    }
+    
+    // Atualiza carrossel ao redimensionar janela
+    window.addEventListener('resize', () => {
+        const maxSlide = totalSlides - 1;
+        if (currentSlide > maxSlide) {
+            currentSlide = maxSlide;
+        }
+        updateCarousel();
+    });
+    
+    // Inicializa o carrossel
+    updateCarousel();
     </script>
 </body>
 </html>
