@@ -115,13 +115,13 @@ header {
 }
 
 header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    /* background: rgba(255, 255, 255, 0.98); */
     box-shadow: var(--sombra-media);
-    color: var(--azul-primario);
+    /* color: var(--azul-primario); */
 }
 
 header.scrolled .nav-menu li a {
-    color: var(--dourado-elegante);
+    /* color: var(--dourado-elegante); */
 }
 
 header .container {
@@ -496,7 +496,7 @@ header .container {
 }
 
 .card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--azul-primario);
@@ -566,6 +566,7 @@ header .container {
 .carousel-container {
     overflow: hidden;
     position: relative;
+    padding: 24px;
 }
 
 .portfolio-card {
@@ -576,9 +577,16 @@ header .container {
     transition: var(--transicao-elastica);
     position: relative;
     border: 1px solid var(--cinza-medio);
-    min-width: 200px;
-    max-width: 200px;
+    min-width: 300px;
+    max-width: 300px;
+    height: 600px;
     flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 }
 
 .carousel-controls {
@@ -654,41 +662,70 @@ header .container {
 }
 
 .portfolio-card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-8px) scale(1.02);
     box-shadow: var(--sombra-hover);
     border-color: var(--dourado-elegante);
 }
 
-.portfolio-img {
-    width: 100%;
-    height: 280px;
-    object-fit: cover;
+.portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
     transition: var(--transicao-suave);
 }
 
+.portfolio-card:hover::before {
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+}
+
+.portfolio-card:hover .portfolio-content {
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.portfolio-img {
+    display: none;
+}
+
 .portfolio-card:hover .portfolio-img {
-    transform: scale(1.03);
+    transform: none;
 }
 
 .portfolio-content {
-    padding: 1.5rem 1.2rem 2rem 1.2rem;
+    position: relative;
+    z-index: 2;
+    padding: 1.5rem 1.2rem;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(4px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0;
+    transition: var(--transicao-suave);
 }
 
 .portfolio-card h4 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Barlow', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--azul-primario);
+    color: var(--branco-puro);
     margin-bottom: 0.8rem;
     line-height: 1.3;
     letter-spacing: -0.01em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .portfolio-card p {
     font-size: 0.9rem;
-    color: var(--azul-primario);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.5;
     margin: 0;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .portfolio-cta {
@@ -705,7 +742,7 @@ header .container {
 
 /* ================= CLIENTES ================= */
 .clientes {
-    padding: calc(var(--section-spacing) * 1.1) 0;
+    padding: calc(var(--section-spacing) * 0.5) 0;
     background: var(--cinza-premium);
     position: relative;
 }
@@ -729,7 +766,7 @@ header .container {
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 600;
     color: var(--azul-primario);
-    margin-bottom: 0.5rem;
+    margin-bottom: -1.5rem;
     letter-spacing: -0.02em;
 }
 
@@ -737,7 +774,7 @@ header .container {
     font-size: clamp(1.1rem, 2.2vw, 1.3rem);
     font-weight: 500;
     color: var(--dourado-elegante);
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     letter-spacing: 0.025em;
 }
 
@@ -757,7 +794,7 @@ header .container {
     gap: 2.5rem;
     align-items: center;
     justify-items: center;
-    margin-top: 3rem;
+    /* margin-top: 3rem; */
     padding: 2rem 0;
 }
 
@@ -786,7 +823,7 @@ header .container {
 
 /* ================= CONTATO ================= */
 .contact {
-    padding: calc(var(--section-spacing) * 1.2) 0;
+    padding: calc(var(--section-spacing) * 0.5) 0;
     background: var(--branco-puro);
     position: relative;
 }
@@ -807,7 +844,7 @@ header .container {
     font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     letter-spacing: -0.02em;
 }
 
@@ -1020,7 +1057,7 @@ header .container {
 
 .footer-logo-img {
     height: 56px;
-    width: auto;
+    width: 56px;
     margin-bottom: 1rem;
     filter: brightness(1.1);
 }
@@ -1293,6 +1330,13 @@ header .container {
         gap: 2rem;
     }
     
+    .portfolio-card {
+        min-width: 250px;
+        max-width: 250px;
+        height: 500px;
+        margin: 0 auto;
+    }
+    
     .clientes-logos {
         grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 1.5rem;
@@ -1354,6 +1398,7 @@ header .container {
     .portfolio-card {
         min-width: 180px;
         max-width: 180px;
+        height: 360px;
     }
     
     .carousel-indicators {

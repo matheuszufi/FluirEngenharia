@@ -124,6 +124,34 @@
                                 <p>Sistema hidráulico integrado para complexo industrial, incorporando soluções sustentáveis e tecnologia de monitoramento em tempo real.</p>
                             </div>
                         </div>
+                         <div class="portfolio-card">
+                            <img src="images/portfolio/urbanedge.png" alt="Projeto Residencial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Residencial Águas Claras</h4>
+                                <p>Projeto hidráulico completo para condomínio de alto padrão, com soluções de reuso e eficiência hídrica, resultando em 30% de economia no consumo de água.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Shopping Center Premium</h4>
+                                <p>Instalação de sistemas hidráulicos eficientes para centro comercial, priorizando economia e sustentabilidade com tecnologias de ponta.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Fábrica de Alimentos</h4>
+                                <p>Desenvolvimento de soluções hidráulicas industriais, com foco em segurança alimentar e processos automatizados de última geração.</p>
+                            </div>
+                        </div>
+                        <div class="portfolio-card">
+                            <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-content">
+                                <h4>Complexo Industrial Mumajo</h4>
+                                <p>Sistema hidráulico integrado para complexo industrial, incorporando soluções sustentáveis e tecnologia de monitoramento em tempo real.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
@@ -143,6 +171,9 @@
                     <span class="indicator" data-slide="1"></span>
                     <span class="indicator" data-slide="2"></span>
                     <span class="indicator" data-slide="3"></span>
+                    <span class="indicator" data-slide="4"></span>
+                    <span class="indicator" data-slide="5"></span>
+                    <span class="indicator" data-slide="6"></span>
                 </div>
             </div>
             
@@ -164,7 +195,7 @@
         <div class="container">
             <h2 class="section-title">Clientes</h2>
             <h2 class="section-subtitle">Parceiros de Confiança</h2>
-            <p class="clientes-description">Orgulhamo-nos de trabalhar com as principais empresas do mercado, desenvolvendo soluções que superam expectativas e geram resultados excepcionais.</p>
+            <!-- <p class="clientes-description">Orgulhamo-nos de trabalhar com as principais empresas do mercado, desenvolvendo soluções que superam expectativas e geram resultados excepcionais.</p> -->
             <div class="clientes-logos">
                 <img src="images/clients/mrv.png" alt="MRV Logo" class="cliente-logo">
                 <img src="images/clients/gnd.jpg" alt="GND Logo" class="cliente-logo">
@@ -486,6 +517,22 @@
     
     // Inicializa o carrossel
     updateCarousel();
+    
+    // ========== PORTFOLIO CARDS BACKGROUND ==========
+    // Aplica as imagens como background dos cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const portfolioCards = document.querySelectorAll('.portfolio-card');
+        
+        portfolioCards.forEach(card => {
+            const img = card.querySelector('.portfolio-img');
+            if (img) {
+                const imageSrc = img.src;
+                card.style.backgroundImage = `url('${imageSrc}')`;
+                // Remove a tag img já que agora usamos background
+                img.remove();
+            }
+        });
+    });
     </script>
 </body>
 </html>
