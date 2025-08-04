@@ -1,15 +1,13 @@
 /* ================= VARIÁVEIS CSS ================= */
 :root {
     /* Paleta de cores simplificada - 3 cores */
-    --azul-primario: #032758;     /* Azul principal */
-    --azul-secundario: #032758;   /* Mesmo azul para consistência */
-    --azul-claro: #032758;        /* Mesmo azul para acentos */
-    --azul-escuro: #032758;       /* Mesmo azul para profundidade */
-    --cinza-premium: #ffffff;     /* Branco para fundo premium */
-    --cinza-medio: #032758;       /* Azul para divisores */
-    --dourado-elegante: #99592f;  /* Dourado/marrom elegante */
-    --dourado-escuro: #99592f;    /* Mesmo dourado para consistência */
-    --branco-puro: #ffffff;
+    --azul-primario: rgb(3, 39, 88);     /* Azul principal */
+    --azul-secundario: rgb(91, 120, 151);   /* Mesmo azul para consistência */
+    --azul-claro: rgb(174, 193, 208);        /* Mesmo azul para acentos */
+    --branco: rgb(255, 255, 255);     /* Branco para fundo premium */
+    --marrom-primario: rgb(153, 89, 47);  /* Dourado/marrom elegante */
+    --marrom-secundario: rgb(172, 108, 52);    /* Mesmo dourado para consistência */
+    --marrom-claro: rgb(217, 190, 152);
     --cinza-texto: #032758;       /* Azul para texto principal */
     --cinza-texto-claro: #99592f; /* Dourado para subtextos */
     
@@ -33,8 +31,7 @@
 }
 
 /* ================= FONTS ================= */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Fonte Nunito Sans importada no HTML para melhor performance */
 
 /* ================= RESET E BASE ================= */
 * {
@@ -48,8 +45,8 @@ html {
 }
 
 body {
-    font-family: 'Barlow', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--branco-puro);
+    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--branco);
     color: var(--cinza-texto);
     line-height: 1.7;
     overflow-x: hidden;
@@ -110,7 +107,7 @@ header {
     background: linear-gradient(60deg, var(--azul-primario), rgba(3, 39, 88, 0.6)   );
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--cinza-medio);
+    border-bottom: 1px solid var(--azul-primario);
     transition: var(--transicao-suave);
 }
 
@@ -118,10 +115,6 @@ header.scrolled {
     /* background: rgba(255, 255, 255, 0.98); */
     box-shadow: var(--sombra-media);
     /* color: var(--azul-primario); */
-}
-
-header.scrolled .nav-menu li a {
-    /* color: var(--dourado-elegante); */
 }
 
 header .container {
@@ -183,13 +176,13 @@ header .container {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--dourado-elegante), var(--dourado-escuro));
+    background: linear-gradient(90deg, var(--marrom-primario), var(--marrom-secundario));
     transition: width 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border-radius: 1px;
 }
 
 .nav-menu li a:hover {
-    color: var(--dourado-elegante);
+    color: var(--marrom-primario);
 }
 
 .nav-menu li a:hover::after {
@@ -197,7 +190,7 @@ header .container {
 }
 
 .nav-menu li a:focus {
-    outline: 2px solid var(--dourado-elegante);
+    outline: 2px solid var(--marrom-primario);
     outline-offset: 4px;
     border-radius: var(--border-radius-pequeno);
 }
@@ -278,10 +271,10 @@ header .container {
 }
 
 .hero-content h2 {
-    font-family: 'Barlow', sans-serif;
+    font-family: "Nunito Sans", sans-serif;
     font-size: clamp(2.8rem, 6vw, 4.2rem);
     font-weight: 700;
-    color: var(--branco-puro);
+    color: var(--branco);
     margin-bottom: 1.5rem;
     /* text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); */
     line-height: 1.1;
@@ -328,12 +321,12 @@ header .container {
     overflow: hidden;
     min-width: 180px;
     height: 56px;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .btn-primary {
     background: rgb(3, 39, 88);
-    color: var(--branco-puro);
+    color: var(--branco);
     box-shadow: var(--sombra-media);
     border: 2px solid var(--azul-primario);
 }
@@ -362,30 +355,30 @@ header .container {
 
 .btn-secondary {
     background: rgba(255, 255, 255, 0.1);
-    color: var(--branco-puro);
+    color: var(--branco);
     border: 2px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 }
 
 .btn-secondary:hover {
-    background: var(--branco-puro);
+    background: var(--branco);
     color: var(--azul-primario);
-    border-color: var(--branco-puro);
+    border-color: var(--branco);
     transform: translateY(-2px) scale(1.02);
     box-shadow: var(--sombra-hover);
 }
 
 .btn-primary:focus,
 .btn-secondary:focus {
-    outline: 3px solid var(--dourado-elegante);
+    outline: 3px solid var(--marrom-primario);
     outline-offset: 2px;
 }
 
 /* ================= SERVIÇOS ================= */
 .servicos {
     padding: calc(var(--section-spacing) * 0.5) 0;
-    background: var(--cinza-premium);
+    background: var(--branco);
     position: relative;
 }
 
@@ -396,12 +389,12 @@ header .container {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--cinza-medio) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--azul-primario) 50%, transparent 100%);
 }
 
 .servicos h3 {
     text-align: center;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
@@ -425,7 +418,7 @@ header .container {
 .servicos-underline {
     width: 60px;
     height: 3px;
-    background: linear-gradient(90deg, var(--dourado-elegante) 0%, var(--dourado-escuro) 100%);
+    background: linear-gradient(90deg, var(--marrom-primario) 0%, var(--dourado-escuro) 100%);
     border-radius: 2px;
     margin: 0 auto 3rem auto;
     animation: scaleIn 0.8s ease-out;
@@ -439,7 +432,7 @@ header .container {
 }
 
 .card {
-    background: var(--branco-puro);
+    background: var(--branco);
     border-radius: var(--border-radius-grande);
     padding: 3rem 2.5rem;
     box-shadow: var(--sombra-suave);
@@ -487,7 +480,7 @@ header .container {
 
 .card-icon i {
     font-size: 2.2rem;
-    color: var(--branco-puro);
+    color: var(--branco);
 }
 
 .card:hover .card-icon {
@@ -496,7 +489,7 @@ header .container {
 }
 
 .card h4 {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.5rem;
     font-weight: 600;
     color: var(--azul-primario);
@@ -514,7 +507,7 @@ header .container {
 /* ================= PROJETOS/PORTFOLIO ================= */
 .portfolio {
     padding: calc(var(--section-spacing) * 0.5) 0;
-    background: var(--branco-puro);
+    background: var(--branco);
     position: relative;
 }
 
@@ -525,12 +518,12 @@ header .container {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--cinza-medio) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--azul-primario) 50%, transparent 100%);
 }
 
 .portfolio h3 {
     text-align: center;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
@@ -570,13 +563,13 @@ header .container {
 }
 
 .portfolio-card {
-    background: var(--branco-puro);
+    background: var(--branco);
     border-radius: var(--border-radius-grande);
     overflow: hidden;
     box-shadow: var(--sombra-suave);
     transition: var(--transicao-elastica);
     position: relative;
-    border: 1px solid var(--cinza-medio);
+    border: 1px solid var(--azul-primario);
     min-width: 300px;
     max-width: 300px;
     height: 600px;
@@ -601,9 +594,9 @@ header .container {
 }
 
 .carousel-btn {
-    background: var(--branco-puro);
-    border: 2px solid var(--dourado-elegante);
-    color: var(--dourado-elegante);
+    background: var(--branco);
+    border: 2px solid var(--marrom-primario);
+    color: var(--marrom-primario);
     width: 50px;
     height: 50px;
     display: flex;
@@ -617,8 +610,8 @@ header .container {
 }
 
 .carousel-btn:hover {
-    background: var(--dourado-elegante);
-    color: var(--branco-puro);
+    background: var(--marrom-primario);
+    color: var(--branco);
     transform: scale(1.1);
     box-shadow: var(--sombra-forte);
 }
@@ -645,14 +638,14 @@ header .container {
 .indicator {
     width: 12px;
     height: 12px;
-    background: var(--cinza-medio);
+    background: var(--azul-primario);
     cursor: pointer;
     transition: var(--transicao-suave);
     position: relative;
 }
 
 .indicator.active {
-    background: var(--dourado-elegante);
+    background: var(--marrom-primario);
     transform: scale(1.2);
 }
 
@@ -664,7 +657,7 @@ header .container {
 .portfolio-card:hover {
     transform: translateY(-8px) scale(1.02);
     box-shadow: var(--sombra-hover);
-    border-color: var(--dourado-elegante);
+    border-color: var(--marrom-primario);
 }
 
 .portfolio-card::before {
@@ -701,7 +694,7 @@ header .container {
     position: relative;
     z-index: 2;
     padding: 1.5rem 1.2rem;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(1px);
     -webkit-backdrop-filter: blur(4px);
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -710,10 +703,10 @@ header .container {
 }
 
 .portfolio-card h4 {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
-    color: var(--branco-puro);
+    color: var(--branco);
     margin-bottom: 0.8rem;
     line-height: 1.3;
     letter-spacing: -0.01em;
@@ -743,7 +736,7 @@ header .container {
 /* ================= CLIENTES ================= */
 .clientes {
     padding: calc(var(--section-spacing) * 0.5) 0;
-    background: var(--cinza-premium);
+    background: var(--branco);
     position: relative;
 }
 
@@ -754,7 +747,7 @@ header .container {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--cinza-medio) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--azul-primario) 50%, transparent 100%);
 }
 
 .clientes .container {
@@ -762,7 +755,7 @@ header .container {
 }
 
 .section-title {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 600;
     color: var(--azul-primario);
@@ -773,7 +766,7 @@ header .container {
 .section-subtitle {
     font-size: clamp(1.1rem, 2.2vw, 1.3rem);
     font-weight: 500;
-    color: var(--dourado-elegante);
+    color: var(--marrom-primario);
     /* margin-bottom: 1rem; */
     letter-spacing: 0.025em;
 }
@@ -807,7 +800,7 @@ header .container {
     transition: var(--transicao-suave);
     /* filter: grayscale(100%) brightness(0.8); */
     display: block;
-    background-color: var(--branco-puro);
+    background-color: var(--branco);
     border: none;
     outline: none;
     padding: 12px;
@@ -824,7 +817,7 @@ header .container {
 /* ================= CONTATO ================= */
 .contact {
     padding: calc(var(--section-spacing) * 0.5) 0;
-    background: var(--branco-puro);
+    background: var(--branco);
     position: relative;
 }
 
@@ -835,12 +828,12 @@ header .container {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(90deg, transparent 0%, var(--cinza-medio) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--azul-primario) 50%, transparent 100%);
 }
 
 .contact h2 {
     text-align: center;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
@@ -851,7 +844,7 @@ header .container {
 .contact-subtitle {
     text-align: center;
     font-size: clamp(1.1rem, 2vw, 1.25rem);
-    color: var(--cinza-texto-claro);
+    color: var(--marrom-primario);
     margin-bottom: 4rem;
     max-width: 650px;
     margin-left: auto;
@@ -870,15 +863,15 @@ header .container {
 }
 
 .contact-info {
-    background: var(--cinza-premium);
+    background: var(--branco);
     border-radius: var(--border-radius-grande);
     padding: 3rem 2.5rem;
     box-shadow: var(--sombra-suave);
-    border: 1px solid var(--cinza-medio);
+    border: 1px solid var(--azul-primario);
 }
 
 .contact-info-title {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
     color: var(--azul-primario);
@@ -912,7 +905,7 @@ header .container {
 
 .contact-icon i {
     font-size: 1.4rem;
-    color: var(--branco-puro);
+    color: var(--branco);
 }
 
 .contact-item h4 {
@@ -951,10 +944,10 @@ header .container {
 }
 
 .contact-form-title {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.8rem;
     font-weight: 600;
-    color: var(--branco-puro);
+    color: var(--branco);
     margin-bottom: 2rem;
     letter-spacing: -0.01em;
 }
@@ -970,12 +963,12 @@ header .container {
     border: 2px solid rgba(255,255,255,0.2);
     border-radius: var(--border-radius-medio);
     background: rgba(255,255,255,0.1);
-    color: var(--branco-puro);
+    color: var(--branco);
     font-size: 1.05rem;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     transition: var(--transicao-suave);
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
 }
 
 .form-group input::placeholder,
@@ -986,7 +979,7 @@ header .container {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--dourado-elegante);
+    border-color: var(--marrom-primario);
     background: rgba(255,255,255,0.15);
     box-shadow: 0 0 0 3px rgba(153, 89, 47, 0.2);
     transform: translateY(-1px);
@@ -1007,9 +1000,9 @@ header .container {
 }
 
 .contact-form .btn-primary:hover {
-    background: var(--branco-puro);
+    background: var(--branco);
     color: var(--azul-primario);
-    border-color: var(--branco-puro);
+    border-color: var(--branco);
 }
 
 @media (max-width: 768px) {
@@ -1021,8 +1014,8 @@ header .container {
 
 /* ================= FOOTER ================= */
 .footer {
-    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-primario) 100%);
-    color: var(--branco-puro);
+    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-primario) 100%);
+    color: var(--branco);
     padding: 80px 0 0 0;
     position: relative;
     margin-top: 100px;
@@ -1035,7 +1028,7 @@ header .container {
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent 0%, var(--dourado-elegante) 50%, transparent 100%);
+    background: linear-gradient(90deg, transparent 0%, var(--marrom-primario) 50%, transparent 100%);
 }
 
 .footer-content {
@@ -1063,10 +1056,10 @@ header .container {
 }
 
 .footer-logo-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Nunito Sans', sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
-    color: var(--dourado-elegante);
+    color: var(--marrom-primario);
     margin-bottom: 0.8rem;
     letter-spacing: -0.01em;
 }
@@ -1081,7 +1074,7 @@ header .container {
 .footer-section-title {
     font-size: 1.25rem;
     font-weight: 600;
-    color: var(--dourado-elegante);
+    color: var(--marrom-primario);
     margin-bottom: 1.5rem;
     letter-spacing: -0.01em;
 }
@@ -1104,7 +1097,7 @@ header .container {
 }
 
 .footer-link:hover {
-    color: var(--dourado-elegante);
+    color: var(--marrom-primario);
     transform: translateX(8px);
 }
 
@@ -1119,7 +1112,7 @@ header .container {
 }
 
 .footer-contact:hover {
-    color: var(--dourado-elegante);
+    color: var(--marrom-primario);
 }
 
 .footer-social {
@@ -1143,8 +1136,8 @@ header .container {
 }
 
 .footer-social-link:hover {
-    background: var(--dourado-elegante);
-    color: var(--branco-puro);
+    background: var(--marrom-primario);
+    color: var(--branco);
     transform: translateY(-3px) scale(1.05);
     box-shadow: var(--sombra-media);
 }
@@ -1186,7 +1179,7 @@ header .container {
 
 .whatsapp-icon {
     font-size: 2rem;
-    color: var(--branco-puro);
+    color: var(--branco);
 }
 
 .whatsapp-tooltip {
@@ -1195,7 +1188,7 @@ header .container {
     top: 50%;
     transform: translateY(-50%);
     background: var(--azul-primario);
-    color: var(--branco-puro);
+    color: var(--branco);
     padding: 10px 16px;
     border-radius: 0px;
     font-size: 0.95rem;
@@ -1239,7 +1232,7 @@ header .container {
         left: 0;
         width: 100%;
         height: calc(100vh - var(--header-altura));
-        background: var(--branco-puro);
+        background: var(--branco);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -1265,7 +1258,7 @@ header .container {
         padding: 1rem 2rem;
         width: 100%;
         font-size: 1.1rem;
-        border-bottom: 1px solid var(--cinza-medio);
+        border-bottom: 1px solid var(--azul-primario);
     }
     
     .nav-menu li a::after {
