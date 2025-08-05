@@ -225,7 +225,7 @@ header .container {
 .hero {
     position: relative;
     min-height: 100vh;
-    background: rgba(255, 255, 255, 0.697);
+
     display: flex;
     align-items: center;
     padding-top: var(--header-altura);
@@ -239,7 +239,7 @@ header .container {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(3, 39, 88, 0.2);
     z-index: 1;
 }
 
@@ -261,6 +261,7 @@ header .container {
     width: 100%;
     height: 100%;
     z-index: 0;
+    background-color: rgb(3, 39, 88);
 }
 
 .hero-bg-img {
@@ -610,18 +611,21 @@ header .container {
     /* margin-top: 4rem; */
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     overflow: visible;
+    margin: 12px;
 }
 
 /* ================= CAROUSEL STYLES ================= */
 .portfolio-carousel {
     position: relative;
+    overflow: visible;
     /* margin-top: 4rem; */
 }
 
 .carousel-container {
-    overflow: hidden;
+    overflow-x: hidden;
     position: relative;
-    padding: 24px;
+    padding: 24px 60px;
+    /* margin: 12px */
 }
 
 .portfolio-card {
@@ -629,11 +633,12 @@ header .container {
     border-radius: var(--border-radius-grande);
     overflow: hidden;
     box-shadow: var(--sombra-suave);
-    transition: var(--transicao-elastica);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     border: 1px solid var(--azul-primario);
     min-width: 300px;
     max-width: 300px;
+    width: 300px;
     height: 600px;
     flex-shrink: 0;
     background-size: cover;
@@ -642,17 +647,20 @@ header .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    z-index: 1;
 }
 
 .carousel-controls {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    width: 100%;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     z-index: 10;
     pointer-events: none;
+    padding: 0 10px;
 }
 
 .carousel-btn {
@@ -661,6 +669,7 @@ header .container {
     color: var(--marrom-primario);
     width: 50px;
     height: 50px;
+    /* border-radius: 50%; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -680,14 +689,6 @@ header .container {
 
 .carousel-btn:active {
     transform: scale(0.95);
-}
-
-.carousel-prev {
-    margin-left: -25px;
-}
-
-.carousel-next {
-    margin-right: -25px;
 }
 
 .carousel-indicators {
@@ -717,9 +718,13 @@ header .container {
 }
 
 .portfolio-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-8px);
     box-shadow: var(--sombra-hover);
     border-color: var(--marrom-primario);
+    width: 600px;
+    min-width: 600px;
+    max-width: 600px;
+    z-index: 10;
 }
 
 .portfolio-card::before {
