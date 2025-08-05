@@ -354,7 +354,7 @@ header .container {
 
 .highlight {
     color: var(--azul-primario);
-    font-weight: 700    ;
+    font-weight: 600;
 
 }
 
@@ -669,7 +669,8 @@ header .container {
     color: var(--marrom-primario);
     width: 50px;
     height: 50px;
-    /* border-radius: 50%; */
+    /* border-radius: 50%;
+     */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -933,10 +934,34 @@ header .container {
 
 .contact-info {
     background: var(--branco);
+      background: url('./images/bghero9.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-radius: var(--border-radius-grande);
     padding: 3rem 2.5rem;
     box-shadow: var(--sombra-suave);
     border: 1px solid var(--azul-primario);
+    position: relative;
+    overflow: hidden;
+    min-height: 600px;
+}
+
+.contact-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: rgba(103, 43, 43, 0.9); */
+    border-radius: var(--border-radius-grande);
+    z-index: 1;
+}
+
+.contact-info > * {
+    position: relative;
+    z-index: 2;
 }
 
 .contact-info-title {
