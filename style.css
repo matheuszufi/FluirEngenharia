@@ -31,7 +31,27 @@
 }
 
 /* ================= FONTS ================= */
-/* Fonte Nunito Sans importada no HTML para melhor performance */
+@font-face {
+    font-family: 'Garet';
+    src: url('./fonts/Garet-Book.otf') format('opentype'),
+         url('./fonts/Garet-Book.woff2') format('woff2'),
+         url('./fonts/Garet-Book.woff') format('woff'),
+         url('./fonts/Garet-Book.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Garet';
+    src: url('./fonts/Garet-Heavy.otf') format('opentype'),
+         url('./fonts/Garet-Heavy.woff2') format('woff2'),
+         url('./fonts/Garet-Heavy.woff') format('woff'),
+         url('./fonts/Garet-Heavy.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* ================= RESET E BASE ================= */
 * {
@@ -45,7 +65,7 @@ html {
 }
 
 body {
-    font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Garet', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--branco);
     color: var(--cinza-texto);
     line-height: 1.7;
@@ -270,10 +290,50 @@ header .container {
     animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
+.hero-stats {
+    display: inline-flex;
+    margin-bottom: 2rem;
+    width: auto;
+    align-items: center;
+    background-color: rgba(3, 38, 88, 0.5);
+    /* padding: 1rem 1.5rem; */
+    /* border-radius: 8px; */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.typing-animation {
+    display: flex;
+    align-items: center;
+    font-family: 'Garet', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--branco);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    min-height: 3rem;
+}
+
+.typing-text {
+    display: inline-block;
+    margin-right: 0.1em;
+}
+
+.cursor {
+    display: inline-block;
+    background-color: var(--branco);
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
 .hero-content h2 {
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Garet", sans-serif;
     font-size: clamp(2.8rem, 6vw, 4.2rem);
-    font-weight: 700;
+    font-weight: 800;
     color: var(--branco);
     margin-bottom: 1.5rem;
     /* text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); */
@@ -292,6 +352,7 @@ header .container {
 
 .highlight {
     color: var(--azul-primario);
+    font-weight: 700    ;
 
 }
 
@@ -1363,6 +1424,16 @@ header .container {
     
     .hero-content h2 {
         font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+    
+    .hero-stats {
+        gap: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .typing-animation {
+        font-size: clamp(1.4rem, 5vw, 2rem);
+        min-height: 2.5rem;
     }
     
     .card {

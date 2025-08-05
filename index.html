@@ -40,12 +40,18 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg">
-            <img src="images/bghero.png" alt="Vinicius Morais" class="hero-bg-img hero-bg-img-1">
+            <img src="images/bghero7.jpg" alt="Vinicius Morais" class="hero-bg-img hero-bg-img-1">
             <img src="images/bghero5.png" alt="Vinicius Melissa" class="hero-bg-img hero-bg-img-2">
             <!-- <img src="images/bghero3.png" alt="Vinicius Melissa" class="hero-bg-img hero-bg-img-3"> -->
         </div>
         <div class="container">
             <div class="hero-content">
+                <div class="hero-stats">
+                    <div class="typing-animation">
+                        <span class="typing-text" id="typingText"></span>
+                        <span class="cursor">|</span>
+                    </div>
+                </div>
                 <h2>Fluir Engenharia</h2>
           
                 <p><span class="highlight">Excelência em Projetos Hidráulicos</span><br> Soluções inovadoras e sustentáveis para sua obra. Expertise técnica, tecnologia de ponta e atendimento personalizado para <span class="highlight">resultados excepcionais</span> e <span class="highlight">eficiência comprovada</span>.</p>
@@ -269,7 +275,6 @@
             </div>
         </div>
     </section>
-    <!-- Removed duplicate footer closing tag -->
 
     <!-- Footer -->
     <footer class="footer">
@@ -520,6 +525,57 @@
     
     // Inicializa o carrossel
     updateCarousel();
+    
+    // ========== TYPING ANIMATION ==========
+    const typingText = document.getElementById('typingText');
+    const texts = ['+1000 Projetos Feitos', '+500 Clientes Atendidos'];
+    let currentTextIndex = 0;
+    let currentCharIndex = 0;
+    let isDeleting = false;
+    let isPaused = false;
+    
+    function typeWriter() {
+        const currentText = texts[currentTextIndex];
+        
+        if (isPaused) {
+            setTimeout(typeWriter, 2000); // Pausa de 2 segundos antes de começar a apagar
+            isPaused = false;
+            isDeleting = true;
+            return;
+        }
+        
+        if (isDeleting) {
+            // Apagando texto
+            typingText.textContent = currentText.substring(0, currentCharIndex - 1);
+            currentCharIndex--;
+            
+            if (currentCharIndex === 0) {
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % texts.length;
+                setTimeout(typeWriter, 500); // Pausa antes de começar a digitar o próximo
+                return;
+            }
+        } else {
+            // Digitando texto
+            typingText.textContent = currentText.substring(0, currentCharIndex + 1);
+            currentCharIndex++;
+            
+            if (currentCharIndex === currentText.length) {
+                isPaused = true;
+                setTimeout(typeWriter, 3000); // Pausa de 3 segundos após terminar de digitar
+                return;
+            }
+        }
+        
+        // Velocidade da digitação/apagamento
+        const speed = isDeleting ? 50 : 100;
+        setTimeout(typeWriter, speed);
+    }
+    
+    // Iniciar a animação após o carregamento da página
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(typeWriter, 1000); // Aguarda 1 segundo antes de começar
+    });
     
     // ========== PORTFOLIO CARDS BACKGROUND ==========
     // Aplica as imagens como background dos cards
