@@ -1445,6 +1445,76 @@ header .container {
     }
 }
 
+/* ================= SKETCHFAB 3D MODELS ================= */
+.sketchfab-models {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
+}
+
+.sketchfab-embed-wrapper {
+    position: relative;
+    background: var(--branco);
+    border-radius: var(--border-radius-grande);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    border: 2px solid var(--azul-primario);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 400px;
+}
+
+.sketchfab-embed-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--marrom-primario);
+}
+
+.sketchfab-embed-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--border-radius-grande);
+    background-color: #032758;
+}
+
+.sketchfab-embed-wrapper p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px 15px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #4A4A4A !important;
+    font-size: 13px !important;
+    font-weight: normal !important;
+    text-align: center;
+}
+
+.sketchfab-embed-wrapper p a {
+    color: #1CAAD9 !important;
+    font-weight: bold !important;
+    text-decoration: none;
+}
+
+.sketchfab-embed-wrapper p a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .sketchfab-models {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+    }
+    
+    .sketchfab-embed-wrapper {
+        height: 300px;
+    }
+}
+
 @media (max-width: 480px) {
     :root {
         --container-padding: 16px;
