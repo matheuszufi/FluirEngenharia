@@ -104,25 +104,25 @@
             <p class="problemas-subtitle">75% das patologias na construção civil são decorrentes de instalações hidrossanitárias, segundo a SINDUSCON/SP.</p>
             <div class="servicos-underline"></div>
             <div class="problemas-grid">
-                <div class="problema-item">
+                <div class="problema-item" style="background-image: url('images/problemas/maucheiro.png');">
                     <div class="problema-icon">
                         <i class="fas fa-exclamation-triangle"></i>
                     </div>
                     <h4>Mau cheiro</h4>
                 </div>
-                <div class="problema-item">
+                <div class="problema-item" style="background-image: url('images/problemas/espuma.png');">
                     <div class="problema-icon">
                         <i class="fas fa-cloud"></i>
                     </div>
                     <h4>Espuma</h4>
                 </div>
-                <div class="problema-item">
+                <div class="problema-item" style="background-image: url('images/problemas/pressao.png');">
                     <div class="problema-icon">
                         <i class="fas fa-tachometer-alt"></i>
                     </div>
                     <h4>Variação de pressão</h4>
                 </div>
-                <div class="problema-item">
+                <div class="problema-item" style="background-image: url('images/problemas/aguaquente.png');">
                     <div class="problema-icon">
                         <i class="fas fa-thermometer-half"></i>
                     </div>
@@ -164,68 +164,99 @@
         <div class="container">
             <h3>Projetos com Excelência</h3>
             <div class="servicos-underline"></div>
-            <div class="excelencia-grid">
-                <div class="excelencia-category">
-                    <div class="category-header">
-                        <div class="category-icon">
+            <div class="excelencia-container">
+                <!-- Navigation Buttons -->
+                <div class="excelencia-nav">
+                    <button class="excelencia-nav-btn active" data-category="hidrossanitario">
+                        <div class="nav-btn-icon">
                             <i class="fas fa-tint"></i>
                         </div>
-                        <h4>Hidrossanitário</h4>
-                    </div>
-                    <ul class="category-items">
-                        <li>Água Fria/Pressurizada</li>
-                        <li>Água quente (solar/gás/recirculação)</li>
-                        <li>Esgoto/Ventilação/Gordura/Biodigestor</li>
-                        <li>Dreno de Climatização</li>
-                        <li>Cisterna Não Potável/Potável</li>
-                        <li>Tanque de contenção de cheias</li>
-                    </ul>
-                </div>
-                
-                <div class="excelencia-category">
-                    <div class="category-header">
-                        <div class="category-icon">
+                        <span>Hidrossanitário</span>
+                    </button>
+                    <button class="excelencia-nav-btn" data-category="piscinas">
+                        <div class="nav-btn-icon">
                             <i class="fas fa-swimming-pool"></i>
                         </div>
-                        <h4>Piscinas</h4>
-                    </div>
-                    <ul class="category-items">
-                        <li>Filtragem</li>
-                        <li>Aquecimento (Trocador/SOLAR/Gás)</li>
-                        <li>Hidromassagem</li>
-                        <li>Borda Infinita</li>
-                        <li>Cascata</li>
-                    </ul>
-                </div>
-                
-                <div class="excelencia-category">
-                    <div class="category-header">
-                        <div class="category-icon">
+                        <span>Piscinas</span>
+                    </button>
+                    <button class="excelencia-nav-btn" data-category="gasglp">
+                        <div class="nav-btn-icon">
                             <i class="fas fa-gas-pump"></i>
                         </div>
-                        <h4>Gás GLP</h4>
-                    </div>
-                    <ul class="category-items">
-                        <li>Instalações residenciais</li>
-                        <li>Instalações comerciais</li>
-                        <li>Sistemas de segurança</li>
-                        <li>Regulagem e medição</li>
-                    </ul>
-                </div>
-                
-                <div class="excelencia-category">
-                    <div class="category-header">
-                        <div class="category-icon">
+                        <span>Gás GLP</span>
+                    </button>
+                    <button class="excelencia-nav-btn" data-category="previncendio">
+                        <div class="nav-btn-icon">
                             <i class="fas fa-fire-extinguisher"></i>
                         </div>
-                        <h4>Prevenção e Combate a Incêndio</h4>
+                        <span>Prevenção e Combate a Incêndio</span>
+                    </button>
+                </div>
+                
+                <!-- Content Display -->
+                <div class="excelencia-display">
+                    <div class="excelencia-category active" id="hidrossanitario" style="background-image: url('images/excelence/hidrossanitario.png');">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h4>Hidrossanitário</h4>
+                        </div>
+                        <ul class="category-items">
+                            <li>Água Fria/Pressurizada</li>
+                            <li>Água quente (solar/gás/recirculação)</li>
+                            <li>Esgoto/Ventilação/Gordura/Biodigestor</li>
+                            <li>Dreno de Climatização</li>
+                            <li>Cisterna Não Potável/Potável</li>
+                            <li>Tanque de contenção de cheias</li>
+                        </ul>
                     </div>
-                    <ul class="category-items">
-                        <li>Sprinklers automáticos</li>
-                        <li>Hidrantes e mangotinhos</li>
-                        <li>Sistemas de detecção</li>
-                        <li>Reserva técnica de incêndio</li>
-                    </ul>
+                    
+                    <div class="excelencia-category" id="piscinas" style="background-image: url('images/excelence/piscinas.png');">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-swimming-pool"></i>
+                            </div>
+                            <h4>Piscinas</h4>
+                        </div>
+                        <ul class="category-items">
+                            <li>Filtragem</li>
+                            <li>Aquecimento (Trocador/SOLAR/Gás)</li>
+                            <li>Hidromassagem</li>
+                            <li>Borda Infinita</li>
+                            <li>Cascata</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="excelencia-category" id="gasglp" style="background-image: url('images/excelence/gasglp.png');">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-gas-pump"></i>
+                            </div>
+                            <h4>Gás GLP</h4>
+                        </div>
+                        <ul class="category-items">
+                            <li>Instalações residenciais</li>
+                            <li>Instalações comerciais</li>
+                            <li>Sistemas de segurança</li>
+                            <li>Regulagem e medição</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="excelencia-category" id="previncendio" style="background-image: url('images/excelence/previncendio.png');">
+                        <div class="category-header">
+                            <div class="category-icon">
+                                <i class="fas fa-fire-extinguisher"></i>
+                            </div>
+                            <h4>Prevenção e Combate a Incêndio</h4>
+                        </div>
+                        <ul class="category-items">
+                            <li>Sprinklers automáticos</li>
+                            <li>Hidrantes e mangotinhos</li>
+                            <li>Sistemas de detecção</li>
+                            <li>Reserva técnica de incêndio</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -242,60 +273,108 @@
             <div class="portfolio-carousel">
                 <div class="carousel-container">
                     <div class="portfolio-grid" id="portfolioCarousel">
-                        <div class="portfolio-card">
-                            <img src="images/projhydro1.png" alt="Projeto Residencial" class="portfolio-img">
+                        <div class="portfolio-card active">
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/whitecica1.png" alt="Foto do Projeto Residencial" class="portfolio-img">
+                              
+                            </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/whitecica2.png" alt="Projeto Residencial" class="portfolio-img">
+                                
+                            </div>
                             <div class="portfolio-content">
                                 <h4>Residencial Águas Claras</h4>
-                               
                             </div>
                         </div>
                         <div class="portfolio-card">
-                            <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/whiteengenhariaproject.png" alt="Foto do Projeto Comercial" class="portfolio-img">
+                              
+                            </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
+                                
+                            </div>
                             <div class="portfolio-content">
                                 <h4>Shopping Center Premium</h4>
-                             
                             </div>
                         </div>
                         <div class="portfolio-card">
-                            <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/whiteproject2.png" alt="Foto do Projeto Industrial" class="portfolio-img">
+                              
+                            </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
+                                
+                            </div>
                             <div class="portfolio-content">
                                 <h4>Fábrica de Alimentos</h4>
-                             
                             </div>
                         </div>
                         <div class="portfolio-card">
-                            <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/mumajoproject.png" alt="Foto do Projeto Industrial" class="portfolio-img">
+                              
+                            </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
+                                
+                            </div>
                             <div class="portfolio-content">
                                 <h4>Complexo Industrial Mumajo</h4>
-                           
                             </div>
                         </div>
                          <div class="portfolio-card">
-                            <img src="images/portfolio/urbanedge.png" alt="Projeto Residencial" class="portfolio-img">
-                            <div class="portfolio-content">
-                                <h4>Residencial Águas Claras</h4>
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/urbanedge.png" alt="Foto do Projeto Residencial" class="portfolio-img">
                               
                             </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/urbanedge.png" alt="Projeto Residencial" class="portfolio-img">
+                                
+                            </div>
+                            <div class="portfolio-content">
+                                <h4>Residencial Águas Claras</h4>
+                            </div>
                         </div>
                         <div class="portfolio-card">
-                            <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/whiteengenhariaproject.png" alt="Foto do Projeto Comercial" class="portfolio-img">
+                              
+                            </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
+                                
+                            </div>
                             <div class="portfolio-content">
                                 <h4>Shopping Center Premium</h4>
-                            
                             </div>
                         </div>
                         <div class="portfolio-card">
-                            <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/whiteproject2.png" alt="Foto do Projeto Industrial" class="portfolio-img">
+                                <div class="portfolio-label">Foto</div>
+                            </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
+                                
+                            </div>
                             <div class="portfolio-content">
                                 <h4>Fábrica de Alimentos</h4>
-                         
                             </div>
                         </div>
                         <div class="portfolio-card">
-                            <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
+                            <div class="portfolio-half portfolio-half-left">
+                                <img src="images/portfolio/mumajoproject.png" alt="Foto do Projeto Industrial" class="portfolio-img">
+                                <div class="portfolio-label">Foto</div>
+                            </div>
+                            <div class="portfolio-half portfolio-half-right">
+                                <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
+                                
+                            </div>
                             <div class="portfolio-content">
                                 <h4>Complexo Industrial Mumajo</h4>
-                               
                             </div>
                         </div>
                     </div>
@@ -555,12 +634,15 @@
     function updateCarousel() {
         if (!carousel || !cards.length) return;
         
-        const visibleCards = getVisibleCards();
-        const cardWidth = cards[0].offsetWidth;
-        const gap = 24; // 1.5rem = 24px
-        const offset = currentSlide * (cardWidth + gap);
+        // Remove active class from all cards
+        cards.forEach((card, index) => {
+            card.classList.remove('active');
+        });
         
-        carousel.style.transform = `translateX(-${offset}px)`;
+        // Add active class to current card
+        if (cards[currentSlide]) {
+            cards[currentSlide].classList.add('active');
+        }
         
         // Atualiza indicadores
         indicators.forEach((indicator, index) => {
@@ -570,14 +652,13 @@
         // Controla visibilidade dos botões
         if (prevBtn && nextBtn) {
             prevBtn.style.opacity = currentSlide === 0 ? '0.5' : '1';
-            nextBtn.style.opacity = currentSlide >= totalSlides - visibleCards ? '0.5' : '1';
+            nextBtn.style.opacity = currentSlide >= totalSlides - 1 ? '0.5' : '1';
         }
     }
     
     // Próximo slide
     function nextSlide() {
-        const visibleCards = getVisibleCards();
-        if (currentSlide < totalSlides - visibleCards) {
+        if (currentSlide < totalSlides - 1) {
             currentSlide++;
             updateCarousel();
         }
@@ -636,8 +717,7 @@
     
     function startAutoPlay() {
         autoPlayInterval = setInterval(() => {
-            const visibleCards = getVisibleCards();
-            if (currentSlide >= totalSlides - visibleCards) {
+            if (currentSlide >= totalSlides - 1) {
                 currentSlide = 0;
             } else {
                 currentSlide++;
@@ -661,10 +741,8 @@
     
     // Atualiza carrossel ao redimensionar janela
     window.addEventListener('resize', () => {
-        const visibleCards = getVisibleCards();
-        const maxSlide = Math.max(0, totalSlides - visibleCards);
-        if (currentSlide > maxSlide) {
-            currentSlide = maxSlide;
+        if (currentSlide >= totalSlides) {
+            currentSlide = totalSlides - 1;
         }
         updateCarousel();
     });
@@ -732,18 +810,29 @@
         // Iniciar após um pequeno delay
         setTimeout(typeWriter, 1000);
     }
-    
-    // ========== PORTFOLIO CARDS BACKGROUND ==========
-    function initPortfolioCards() {
-        const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+    // ========== EXCELENCIA CATEGORY NAVIGATION ==========
+    function initExcelenciaNavigation() {
+        const navButtons = document.querySelectorAll('.excelencia-nav-btn');
+        const categories = document.querySelectorAll('.excelencia-category');
         
-        portfolioCards.forEach(card => {
-            const img = card.querySelector('.portfolio-img');
-            if (img) {
-                const imageSrc = img.src;
-                card.style.backgroundImage = `url('${imageSrc}')`;
-                img.remove();
-            }
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const targetCategory = this.getAttribute('data-category');
+                
+                // Remove active class from all buttons and categories
+                navButtons.forEach(btn => btn.classList.remove('active'));
+                categories.forEach(cat => cat.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show target category
+                const targetElement = document.getElementById(targetCategory);
+                if (targetElement) {
+                    targetElement.classList.add('active');
+                }
+            });
         });
     }
     
@@ -754,6 +843,7 @@
         // Inicializar apenas as funcionalidades ativas
         initTypingAnimation();
         initPortfolioCards();
+        initExcelenciaNavigation();
         
         console.log('Functions initialized');
     });
