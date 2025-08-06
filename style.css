@@ -465,7 +465,7 @@ header .container {
 
 .diferenciais h3 {
     text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Garet', sans-serif;
     font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
@@ -539,7 +539,7 @@ header .container {
 }
 
 .diferencial-item h4 {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Garet', sans-serif;
     font-size: 1.3rem;
     font-weight: 600;
     color: var(--azul-primario);
@@ -586,7 +586,7 @@ header .container {
 .problemas-subtitle {
     text-align: center;
     font-size: clamp(1.1rem, 2vw, 1.25rem);
-    color: var(--marrom-primario);
+    color: var(--azul-primario);
     margin-bottom: 1rem;
     max-width: 700px;
     margin-left: auto;
@@ -608,11 +608,11 @@ header .container {
 .problema-item {
     background: var(--branco);
     border-radius: var(--border-radius-grande);
-    padding: 2rem 1.5rem;
+    /* padding: 2rem 1.5rem; */
     box-shadow: var(--sombra-suave);
     transition: var(--transicao-elastica);
     position: relative;
-    border: 1px solid #e74c3c;
+    /* border: 1px solid #e74c3c; */
     overflow: hidden;
     text-align: center;
     background-size: cover;
@@ -621,7 +621,9 @@ header .container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    min-height: 400px;
+    min-height: 350px;
+   min-width: 220px;
+
 }
 
 .problema-item::before {
@@ -875,21 +877,65 @@ header .container {
     font-weight: 500;
     color: var(--azul-primario);
     box-shadow: var(--sombra-suave);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+
+.excelencia-nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    transition: var(--transicao-suave);
+    z-index: 1;
+}
+
+.excelencia-nav-btn > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Background específico para cada botão */
+.excelencia-nav-btn[data-category="hidrossanitario"] {
+    background-image: url('images/excelence/hidrossanitario.png');
+}
+
+.excelencia-nav-btn[data-category="piscinas"] {
+    background-image: url('images/excelence/piscinas.png');
+}
+
+.excelencia-nav-btn[data-category="gasglp"] {
+    background-image: url('images/excelence/gasglp.png');
+}
+
+.excelencia-nav-btn[data-category="previncendio"] {
+    background-image: url('images/excelence/previncendio.png');
 }
 
 .excelencia-nav-btn:hover {
-    background: var(--azul-claro);
     border-color: var(--azul-secundario);
     transform: translateX(8px);
     box-shadow: var(--sombra-media);
 }
 
+.excelencia-nav-btn:hover::before {
+    background: rgba(255, 255, 255, 0.7);
+}
+
 .excelencia-nav-btn.active {
-    background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%);
     border-color: var(--azul-primario);
     color: var(--branco);
-    transform: translateX(8px);
-    box-shadow: var(--sombra-media);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.excelencia-nav-btn.active::before {
+    background: linear-gradient(135deg, rgba(3, 39, 88, 0.8) 0%, rgba(91, 120, 151, 0.8) 100%);
 }
 
 .nav-btn-icon {
@@ -1365,37 +1411,116 @@ header .container {
     line-height: 1.6;
 }
 
-.clientes-logos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 2.5rem;
-    align-items: center;
-    justify-items: center;
-    /* margin-top: 3rem; */
+.clientes-carousel {
+    position: relative;
     padding: 2rem 0;
+    max-width: 100%;
+    overflow: hidden;
 }
 
-.cliente-logo {
-    height: 100px;
-    max-width: 140px;
-    width: auto;
+.clientes-logos {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 1rem 0;
+}
+
+.clientes-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2rem;
+}
+
+.cliente-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(3, 39, 88, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+    outline: none;
+}
+
+.cliente-dot:hover {
+    background: rgba(3, 39, 88, 0.6);
+    transform: scale(1.1);
+}
+
+.cliente-dot.active {
+    background: var(--azul-primario);
+    transform: scale(1.3);
+    box-shadow: 0 2px 8px rgba(3, 39, 88, 0.4);
+}
+
+/* Primeira div de logos dos clientes (White, Monpag, Mumajo, Urban Edge) - tamanho específico */
+.clientes-logos:not(.clientes-carousel .clientes-logos) {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+
+}
+
+.clientes-logos:not(.clientes-carousel .clientes-logos) .cliente-logo {
+    height: 200px;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
     object-fit: contain;
-    opacity: 0.6;
+    opacity: 0.7;
     transition: var(--transicao-suave);
-    /* filter: grayscale(100%) brightness(0.8); */
     display: block;
     background-color: var(--branco);
     border: none;
     outline: none;
-    padding: 12px;
-    /* box-shadow: var(--sombra-suave); */
+    padding: 8px;
+    flex-shrink: 0;
 }
 
-.cliente-logo:hover {
+.clientes-logos:not(.clientes-carousel .clientes-logos) .cliente-logo:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: grayscale(0%) brightness(1);
+}
+
+/* Logos do carrossel (segunda div) - mantém tamanho original */
+.cliente-logo {
+    height: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    width: 100px;
+    object-fit: contain;
+    opacity: 0.5;
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    display: block;
+    /* background-color: var(--branco); */
+    border: none;
+    outline: none;
+    padding: 12px;
+    flex-shrink: 0;
+    /* filter: grayscale(60%) brightness(0.9); */
+    transform: scale(0.9);
+}
+
+.cliente-logo.center {
     opacity: 1;
     transform: scale(1.1);
     filter: grayscale(0%) brightness(1);
     /* box-shadow: var(--sombra-media); */
+    z-index: 2;
+    position: relative;
+}
+
+.cliente-logo:hover {
+    opacity: 0.8;
+    transform: scale(1);
+    filter: grayscale(30%) brightness(1);
 }
 
 /* ================= CONTATO ================= */
@@ -1428,7 +1553,7 @@ header .container {
 .contact-subtitle {
     text-align: center;
     font-size: clamp(1.1rem, 2vw, 1.25rem);
-    color: var(--marrom-primario);
+    color: var(--azul-primario);
     margin-bottom: 4rem;
     max-width: 650px;
     margin-left: auto;
@@ -1949,9 +2074,43 @@ header .container {
         left: 10px;
     }
     
+    .clientes-carousel {
+        padding: 1.5rem 0;
+    }
+    
     .clientes-logos {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
         gap: 1.5rem;
+    }
+    
+    /* Primeiras logos - responsivo tablet */
+    .clientes-logos:not(.clientes-carousel .clientes-logos) {
+        gap: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    
+    .clientes-logos:not(.clientes-carousel .clientes-logos) .cliente-logo {
+        height: 120px;
+        width: 120px;
+        min-width: 120px;
+        max-width: 120px;
+    }
+    
+    /* Logos do carrossel - responsivo tablet */
+    .cliente-logo {
+        height: 85px;
+        min-width: 85px;
+        max-width: 85px;
+        width: 85px;
+    }
+    
+    .clientes-dots {
+        gap: 10px;
+        margin-top: 1.5rem;
+    }
+    
+    .cliente-dot {
+        width: 10px;
+        height: 10px;
     }
     
     .contact-content {
@@ -2197,9 +2356,43 @@ header .container {
         margin-bottom: 1rem;
     }
     
+    .clientes-carousel {
+        padding: 1.2rem 0;
+    }
+    
     .clientes-logos {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1.5rem;
+        gap: 1rem;
+    }
+    
+    /* Primeiras logos - responsivo mobile */
+    .clientes-logos:not(.clientes-carousel .clientes-logos) {
+        gap: 1.2rem;
+        padding: 1.2rem 0;
+    }
+    
+    .clientes-logos:not(.clientes-carousel .clientes-logos) .cliente-logo {
+        height: 100px;
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+    }
+    
+    /* Logos do carrossel - responsivo mobile */
+    .cliente-logo {
+        height: 75px;
+        min-width: 75px;
+        max-width: 75px;
+        width: 75px;
+    }
+    
+    .clientes-dots {
+        gap: 8px;
+        margin-top: 1.2rem;
+    }
+    
+    .cliente-dot {
+        width: 8px;
+        height: 8px;
     }
     
     /* Carousel Responsive Styles */
