@@ -405,8 +405,8 @@ header .container {
     display: flex;
     align-items: center;
     font-family: 'Garet', sans-serif;
-    font-size: clamp(1.8rem, 4vw, 2.5rem);
-    font-weight: 800;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 400;
     color: var(--branco);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     min-height: 3rem;
@@ -1342,11 +1342,12 @@ header .container {
     max-width: 70%;
     background: linear-gradient(135deg, rgba(3, 39, 88, 0.9) 0%, rgba(3, 39, 88, 0.7) 100%);
     color: var(--branco);
-    padding: 1.5rem 2rem;
+    padding: 1rem 1rem;
     opacity: 1;
     transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 2;
     backdrop-filter: blur(5px);
+
     -webkit-backdrop-filter: blur(5px);
     /* border-radius: 0 0 12px 0; */
 }
@@ -1441,7 +1442,7 @@ header .container {
 .portfolio-card h4 {
     font-family: 'Garet', sans-serif;
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 400;
     color: var(--branco);
     margin: 0;
     line-height: 1.3;
@@ -2533,7 +2534,7 @@ header .container {
     }
     
     .portfolio-content {
-        padding: 1rem 1.2rem;
+        /* padding: 1rem 1.2rem; */
         max-width: 80%;
         border-radius: 0 0 8px 0;
     }
