@@ -276,11 +276,11 @@
                     <div class="portfolio-grid" id="portfolioCarousel">
                         <div class="portfolio-card active">
                             <div class="portfolio-half portfolio-half-left">
-                                <img src="images/portfolio/whitecica1.png" alt="Foto do Projeto Residencial" class="portfolio-img">
+                                <img src="images/portfolio/whitecica11.png" alt="Foto do Projeto Residencial" class="portfolio-img">
                               
                             </div>
                             <div class="portfolio-half portfolio-half-right">
-                                <img src="images/portfolio/whitecica2.png" alt="Projeto Residencial" class="portfolio-img">
+                                <img src="images/portfolio/whitecica12.png" alt="Projeto Residencial" class="portfolio-img">
                                 
                             </div>
                             <div class="portfolio-content">
@@ -289,11 +289,11 @@
                         </div>
                         <div class="portfolio-card">
                             <div class="portfolio-half portfolio-half-left">
-                                <img src="images/portfolio/whiteengenhariaproject.png" alt="Foto do Projeto Comercial" class="portfolio-img">
+                                <img src="images/portfolio/whitecica21.png" alt="Foto do Projeto Comercial" class="portfolio-img">
                               
                             </div>
                             <div class="portfolio-half portfolio-half-right">
-                                <img src="images/portfolio/whiteengenhariaproject.png" alt="Projeto Comercial" class="portfolio-img">
+                                <img src="images/portfolio/whitecica22.png" alt="Projeto Comercial" class="portfolio-img">
                                 
                             </div>
                             <div class="portfolio-content">
@@ -302,11 +302,11 @@
                         </div>
                         <div class="portfolio-card">
                             <div class="portfolio-half portfolio-half-left">
-                                <img src="images/portfolio/whiteproject2.png" alt="Foto do Projeto Industrial" class="portfolio-img">
+                                <img src="images/portfolio/urbanedge1.png" alt="Foto do Projeto Industrial" class="portfolio-img">
                               
                             </div>
                             <div class="portfolio-half portfolio-half-right">
-                                <img src="images/portfolio/whiteproject2.png" alt="Projeto Industrial" class="portfolio-img">
+                                <img src="images/portfolio/urbanedge2.png" alt="Projeto Industrial" class="portfolio-img">
                                 
                             </div>
                             <div class="portfolio-content">
@@ -315,11 +315,11 @@
                         </div>
                         <div class="portfolio-card">
                             <div class="portfolio-half portfolio-half-left">
-                                <img src="images/portfolio/mumajoproject.png" alt="Foto do Projeto Industrial" class="portfolio-img">
+                                <img src="images/portfolio/eduardogomes1.png" alt="Foto do Projeto Industrial" class="portfolio-img">
                               
                             </div>
                             <div class="portfolio-half portfolio-half-right">
-                                <img src="images/portfolio/mumajoproject.png" alt="Projeto Industrial" class="portfolio-img">
+                                <img src="images/portfolio/eduardogomes2.png" alt="Projeto Industrial" class="portfolio-img">
                                 
                             </div>
                             <div class="portfolio-content">
@@ -328,11 +328,11 @@
                         </div>
                          <div class="portfolio-card">
                             <div class="portfolio-half portfolio-half-left">
-                                <img src="images/portfolio/urbanedge.png" alt="Foto do Projeto Residencial" class="portfolio-img">
+                                <img src="images/portfolio/mumajo1.png" alt="Foto do Projeto Residencial" class="portfolio-img">
                               
                             </div>
                             <div class="portfolio-half portfolio-half-right">
-                                <img src="images/portfolio/urbanedge.png" alt="Projeto Residencial" class="portfolio-img">
+                                <img src="images/portfolio/mumajo2.png" alt="Projeto Residencial" class="portfolio-img">
                                 
                             </div>
                             <div class="portfolio-content">
@@ -502,7 +502,7 @@
                 <div class="footer-section footer-logo-section">
                     <img src="images/fluirlogo.png" alt="Fluir Engenharia" class="logo footer-logo-img">
                     <h3 class="footer-logo-title">Fluir Engenharia</h3>
-                    <p class="footer-logo-desc">Excelência em projetos hidráulicos. Soluções técnicas, seguras e inovadoras para o seu empreendimento.</p>
+                    <p class="footer-logo-desc"></p>
                 </div>
                 <div class="footer-section">
                     <h4 class="footer-section-title">Links Rápidos</h4>
@@ -814,11 +814,16 @@
 
     // ========== EXCELENCIA CATEGORY NAVIGATION ==========
     function initExcelenciaNavigation() {
+        console.log('Initializing excelencia navigation...');
         const navButtons = document.querySelectorAll('.excelencia-nav-btn');
         const categories = document.querySelectorAll('.excelencia-category');
         
+        console.log('Found', navButtons.length, 'navigation buttons');
+        console.log('Found', categories.length, 'categories');
+        
         navButtons.forEach(button => {
             button.addEventListener('click', function() {
+                console.log('Button clicked:', this.getAttribute('data-category'));
                 const targetCategory = this.getAttribute('data-category');
                 
                 // Remove active class from all buttons and categories
@@ -832,6 +837,9 @@
                 const targetElement = document.getElementById(targetCategory);
                 if (targetElement) {
                     targetElement.classList.add('active');
+                    console.log('Activated category:', targetCategory);
+                } else {
+                    console.log('Target element not found:', targetCategory);
                 }
             });
         });
@@ -843,7 +851,6 @@
         
         // Inicializar apenas as funcionalidades ativas
         initTypingAnimation();
-        initPortfolioCards();
         initExcelenciaNavigation();
         
         console.log('Functions initialized');
