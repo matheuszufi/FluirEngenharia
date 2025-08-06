@@ -462,6 +462,12 @@ header .container {
 
 }
 
+.header-highlight {
+    font-size: 36px;
+    color: var(--azul-primario);
+    font-weight: 600;
+}
+
 .hero-buttons {
     display: flex;
     gap: 1.5rem;
@@ -517,7 +523,7 @@ header .container {
 .btn-primary:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: var(--sombra-hover);
-    background: rgba(13, 48, 98);
+    background: rgba(3, 38, 88);
     /* color: var(--azul-primario) */
 }
 
