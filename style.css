@@ -343,6 +343,13 @@ header .container {
     letter-spacing: -0.02em;
 }
 
+.hero-logo {
+    max-width: 300px;
+    height: auto;
+    margin-bottom: 2rem;
+    filter: brightness(1.1);
+}
+
 .hero-content p {
     font-size: clamp(1.15rem, 2.2vw, 1.35rem);
     color: rgba(255, 255, 255, 0.92);
@@ -2116,6 +2123,11 @@ header .container {
     
     .hero-content h2 {
         font-size: clamp(2rem, 8vw, 2.8rem);
+    }
+    
+    .hero-logo {
+        max-width: 200px;
+        margin-bottom: 1.5rem;
     }
     
     .hero-stats {
