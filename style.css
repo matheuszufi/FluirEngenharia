@@ -60,9 +60,15 @@
     box-sizing: border-box;
 }
 
+/* Previne overflow horizontal */
+*, *::before, *::after {
+    max-width: 100%;
+}
+
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -82,6 +88,7 @@ body {
     margin: 0 auto;
     padding: 0 var(--container-padding);
     width: 100%;
+    overflow-x: hidden;
 }
 
 /* ================= ANIMAÇÕES ================= */
@@ -2171,8 +2178,9 @@ header .container {
     }
     
     .portfolio-card {
-        min-width: 500px;
-        max-width: 500px;
+        min-width: 320px;
+        max-width: 100%;
+        width: 100%;
         height: 350px;
         margin: 0 auto;
     }
@@ -2388,6 +2396,17 @@ header .container {
     :root {
         --container-padding: 16px;
         --section-spacing: 60px;
+    }
+    
+    /* Garante que não haverá overflow horizontal */
+    * {
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    .container {
+        padding: 0 16px;
+        overflow-x: hidden;
     }
     
     .hero {
