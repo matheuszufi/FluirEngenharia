@@ -62,6 +62,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -2075,7 +2076,7 @@ header .container {
         left: 0;
         width: 100%;
         height: calc(100vh - var(--header-altura));
-        background: var(--branco);
+        background: var(--azul-primario);
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
@@ -2085,10 +2086,12 @@ header .container {
         transition: transform 0.3s ease;
         box-shadow: var(--sombra-media);
         z-index: 1000;
+
     }
     
     .nav-menu.active {
         transform: translateX(0);
+          
     }
     
     .nav-menu li {
@@ -2100,8 +2103,9 @@ header .container {
         display: block;
         padding: 1rem 2rem;
         width: 100%;
+        color: var(--branco);
         font-size: 1.1rem;
-        border-bottom: 1px solid var(--azul-primario);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     .nav-menu li a::after {
@@ -2511,10 +2515,12 @@ header .container {
     }
     
     .portfolio-card {
-        min-width: 360px;
-        max-width: 360px;
+        min-width: 320px;
+        max-width: 100%;
+        width: 100%;
         height: 280px;
         flex-direction: column;
+        margin: 0 auto;
     }
     
     .portfolio-card.active {
