@@ -605,7 +605,7 @@ header .container {
     left: 0;
     right: 0;
     height: 4px;
-    background: var(--marrom-primario);
+    background: var(--azul-primario);
     transform: scaleX(0);
     transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -617,7 +617,7 @@ header .container {
 .diferencial-item:hover {
     transform: translateY(-8px);
     box-shadow: var(--sombra-hover);
-    border-color: var(--marrom-primario);
+    border-color: var(--azul-claro);
 }
 
 .diferencial-icon {
@@ -1373,8 +1373,8 @@ header .container {
 
 .carousel-btn {
     background: var(--branco);
-    border: 2px solid var(--marrom-primario);
-    color: var(--marrom-primario);
+    border: 2px solid var(--azul-primario);
+    color: var(--azul-primario);
     width: 50px;
     height: 50px;
     /* border-radius: 50%;
@@ -1390,7 +1390,7 @@ header .container {
 }
 
 .carousel-btn:hover {
-    background: var(--marrom-primario);
+    background: var(--azul-primario);
     color: var(--branco);
     transform: scale(1.1);
     box-shadow: var(--sombra-forte);
@@ -1498,7 +1498,7 @@ header .container {
     font-size: clamp(2.5rem, 4vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
-    margin-bottom: -1rem;
+    /* margin-bottom: -1rem; */
     letter-spacing: -0.02em;
     text-align: start;
     width: 100%;
@@ -1944,7 +1944,7 @@ header .container {
 
 .contact h2 {
     text-align: center;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Garet', sans-serif;
     font-size: clamp(2.2rem, 4.5vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
