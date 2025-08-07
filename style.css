@@ -308,11 +308,11 @@ header .container {
     width: 100%;
 }
 
-.nav-menu li a:focus {
+/* .nav-menu li a:focus {
     outline: 2px solid var(--marrom-primario);
     outline-offset: 4px;
     border-radius: var(--border-radius-pequeno);
-}
+} */
 
 .hamburger {
     display: none;
@@ -1840,24 +1840,58 @@ header .container {
     justify-content: flex-start;
     flex-direction: column;
     align-items: flex-start;
-    gap: 3rem;
+    gap: 1rem;
     /* margin: 4rem 0 4rem 0; */
-    padding: 1rem 1rem 1rem 0;
-    /* background: linear-gradient(135deg, rgba(3, 39, 88, 0.1) 0%, rgba(14, 82, 194, 0.1) 100%); */
-    border-radius: var(--border-radius-grande);
-    backdrop-filter: blur(10px);
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.15);
+    /* border-radius: 20px; */
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.quem-somos-stats::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transform: skewX(-15deg);
+    animation: glass-shine 3s infinite;
+    pointer-events: none;
+}
+
+.highlight-sobrenos {
+    color: white;
+}
+
+@keyframes glass-shine {
+    0% { left: -50%; }
+    100% { left: 150%; }
 }
 
 .quem-somos-stats .stat-item {
     text-align: left;
-    /* padding: 1.5rem; */
-    border-radius: var(--border-radius-medio);
+    padding: 0.5rem;
+    /* border-radius: 15px; */
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* border: 1px solid rgba(255, 255, 255, 0.15); */
+    /* backdrop-filter: blur(5px); */
     transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
 }
 
 .quem-somos-stats .stat-item:hover {
-    transform: translateY(-5px);
-    /* background: linear-gradient(135deg, rgba(3, 39, 88, 0.2) 0%, rgba(14, 82, 194, 0.2) 100%); */
+    transform: translateY(-5px) scale(1.02);
+    /* background: rgba(255, 255, 255, 0.2); */
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    /* box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15); */
 }
 
 .quem-somos-stats .stat-number {
@@ -1880,7 +1914,7 @@ header .container {
 .quem-somos-cta {
     /* background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%); */
     border-radius: var(--border-radius-grande);
-    padding: 3rem 0;
+    padding: 3rem 0.4rem;
     /* margin-top: 4rem; */
     color: var(--branco);
     text-align: center;
@@ -2114,7 +2148,7 @@ header .container {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--marrom-primario);
+    /* border-color: var(--marrom-primario); */
     background: rgba(255,255,255,0.15);
     box-shadow: 0 0 0 3px rgba(153, 89, 47, 0.2);
     transform: translateY(-1px);
