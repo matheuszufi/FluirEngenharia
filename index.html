@@ -470,8 +470,8 @@
             <div class="servicos-underline scroll-element animate-scale scroll-delay-300"></div>
             
             <div class="depoimentos-carousel scroll-element animate-fade-up scroll-delay-400">
-                <div class="depoimentos-container" id="depoimentosContainer">
-                    <div class="depoimento-card active">
+                <div class="depoimentos-grid" id="depoimentosGrid">
+                    <div class="depoimento-card">
                         <div class="depoimento-image">
                             <img src="images/depoimentos/depo1.jpg" alt="Depoimento Cliente 1" class="depoimento-img">
                         </div>
@@ -506,24 +506,6 @@
                             <img src="images/depoimentos/depo6.jpg" alt="Depoimento Cliente 6" class="depoimento-img">
                         </div>
                     </div>
-                </div>
-                
-                <div class="depoimentos-controls">
-                    <button class="depoimento-btn depoimento-prev" id="depoPrevBtn">
-                        <i class="fas fa-chevron-left"></i>
-                    </button>
-                    <button class="depoimento-btn depoimento-next" id="depoNextBtn">
-                        <i class="fas fa-chevron-right"></i>
-                    </button>
-                </div>
-                
-                <div class="depoimentos-indicators" id="depoimentosIndicators">
-                    <span class="depoimento-indicator active" data-slide="0"></span>
-                    <span class="depoimento-indicator" data-slide="1"></span>
-                    <span class="depoimento-indicator" data-slide="2"></span>
-                    <span class="depoimento-indicator" data-slide="3"></span>
-                    <span class="depoimento-indicator" data-slide="4"></span>
-                    <span class="depoimento-indicator" data-slide="5"></span>
                 </div>
             </div>
         </div>
@@ -1176,7 +1158,6 @@
         initTypingAnimation();
         initExcelenciaNavigation();
         initClientesCarousel();
-        initDepoimentosCarousel();
         initScrollAnimations();
         
         console.log('Functions initialized');
