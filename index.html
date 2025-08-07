@@ -462,6 +462,73 @@
 
     </section>
 
+    <!-- Depoimentos Section -->
+    <section id="depoimentos" class="depoimentos scroll-element animate-fade-up">
+        <div class="container">
+            <h2 class="section-title scroll-element animate-fade-up">DEPOIMENTOS</h2>
+            <h2 class="section-subtitle scroll-element animate-fade-up scroll-delay-200">O QUE NOSSOS CLIENTES DIZEM</h2>
+            <div class="servicos-underline scroll-element animate-scale scroll-delay-300"></div>
+            
+            <div class="depoimentos-carousel scroll-element animate-fade-up scroll-delay-400">
+                <div class="depoimentos-container" id="depoimentosContainer">
+                    <div class="depoimento-card active">
+                        <div class="depoimento-image">
+                            <img src="images/depoimentos/depo1.jpg" alt="Depoimento Cliente 1" class="depoimento-img">
+                        </div>
+                    </div>
+                    
+                    <div class="depoimento-card">
+                        <div class="depoimento-image">
+                            <img src="images/depoimentos/depo2.jpg" alt="Depoimento Cliente 2" class="depoimento-img">
+                        </div>
+                    </div>
+                    
+                    <div class="depoimento-card">
+                        <div class="depoimento-image">
+                            <img src="images/depoimentos/depo3.jpg" alt="Depoimento Cliente 3" class="depoimento-img">
+                        </div>
+                    </div>
+                    
+                    <div class="depoimento-card">
+                        <div class="depoimento-image">
+                            <img src="images/depoimentos/depo4.jpg" alt="Depoimento Cliente 4" class="depoimento-img">
+                        </div>
+                    </div>
+                    
+                    <div class="depoimento-card">
+                        <div class="depoimento-image">
+                            <img src="images/depoimentos/depo5.jpg" alt="Depoimento Cliente 5" class="depoimento-img">
+                        </div>
+                    </div>
+                    
+                    <div class="depoimento-card">
+                        <div class="depoimento-image">
+                            <img src="images/depoimentos/depo6.jpg" alt="Depoimento Cliente 6" class="depoimento-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="depoimentos-controls">
+                    <button class="depoimento-btn depoimento-prev" id="depoPrevBtn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="depoimento-btn depoimento-next" id="depoNextBtn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="depoimentos-indicators" id="depoimentosIndicators">
+                    <span class="depoimento-indicator active" data-slide="0"></span>
+                    <span class="depoimento-indicator" data-slide="1"></span>
+                    <span class="depoimento-indicator" data-slide="2"></span>
+                    <span class="depoimento-indicator" data-slide="3"></span>
+                    <span class="depoimento-indicator" data-slide="4"></span>
+                    <span class="depoimento-indicator" data-slide="5"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Quem Somos Section -->
     <section id="quem-somos" class="quem-somos scroll-element animate-fade-up">
         <div class="container">
@@ -943,6 +1010,118 @@
         goToLogo(0);
     }
 
+    // ========== DEPOIMENTOS CAROUSEL ==========
+    function initDepoimentosCarousel() {
+        const container = document.getElementById('depoimentosContainer');
+        const cards = document.querySelectorAll('.depoimento-card');
+        const indicators = document.querySelectorAll('.depoimento-indicator');
+        const prevBtn = document.getElementById('depoPrevBtn');
+        const nextBtn = document.getElementById('depoNextBtn');
+        
+        if (!container || !cards.length) return;
+        
+        let currentDepoimento = 0;
+        const totalDepoimentos = cards.length;
+        
+        function updateDepoimentos() {
+            // Remove active class from all cards and indicators
+            cards.forEach(card => card.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Add active class to current card and indicator
+            if (cards[currentDepoimento]) {
+                cards[currentDepoimento].classList.add('active');
+            }
+            if (indicators[currentDepoimento]) {
+                indicators[currentDepoimento].classList.add('active');
+            }
+            
+            // Update button states
+            if (prevBtn && nextBtn) {
+                prevBtn.style.opacity = currentDepoimento === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = currentDepoimento >= totalDepoimentos - 1 ? '0.5' : '1';
+            }
+        }
+        
+        function nextDepoimento() {
+            if (currentDepoimento < totalDepoimentos - 1) {
+                currentDepoimento++;
+                updateDepoimentos();
+            }
+        }
+        
+        function prevDepoimento() {
+            if (currentDepoimento > 0) {
+                currentDepoimento--;
+                updateDepoimentos();
+            }
+        }
+        
+        // Event listeners
+        if (nextBtn) nextBtn.addEventListener('click', nextDepoimento);
+        if (prevBtn) prevBtn.addEventListener('click', prevDepoimento);
+        
+        // Indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                currentDepoimento = index;
+                updateDepoimentos();
+            });
+        });
+        
+        // Auto-play
+        let autoPlay = setInterval(() => {
+            if (currentDepoimento >= totalDepoimentos - 1) {
+                currentDepoimento = 0;
+            } else {
+                currentDepoimento++;
+            }
+            updateDepoimentos();
+        }, 6000);
+        
+        // Pause auto-play on hover
+        if (container) {
+            container.addEventListener('mouseenter', () => clearInterval(autoPlay));
+            container.addEventListener('mouseleave', () => {
+                autoPlay = setInterval(() => {
+                    if (currentDepoimento >= totalDepoimentos - 1) {
+                        currentDepoimento = 0;
+                    } else {
+                        currentDepoimento++;
+                    }
+                    updateDepoimentos();
+                }, 6000);
+            });
+        }
+        
+        // Touch/swipe support
+        let startX = 0;
+        let endX = 0;
+        
+        if (container) {
+            container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].clientX;
+            });
+            
+            container.addEventListener('touchend', (e) => {
+                endX = e.changedTouches[0].clientX;
+                const diff = startX - endX;
+                const threshold = 50;
+                
+                if (Math.abs(diff) > threshold) {
+                    if (diff > 0) {
+                        nextDepoimento();
+                    } else {
+                        prevDepoimento();
+                    }
+                }
+            });
+        }
+        
+        // Initialize
+        updateDepoimentos();
+    }
+
     // ========== SCROLL ANIMATIONS ==========
     function initScrollAnimations() {
         const scrollElements = document.querySelectorAll('.scroll-element');
@@ -997,6 +1176,7 @@
         initTypingAnimation();
         initExcelenciaNavigation();
         initClientesCarousel();
+        initDepoimentosCarousel();
         initScrollAnimations();
         
         console.log('Functions initialized');
