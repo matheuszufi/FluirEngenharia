@@ -1410,14 +1410,15 @@ header .container {
 .indicator {
     width: 12px;
     height: 12px;
-    background: var(--azul-primario);
+    border-radius: 50%;
+    background: var(--azul-claro);
     cursor: pointer;
     transition: var(--transicao-suave);
     position: relative;
 }
 
 .indicator.active {
-    background: var(--marrom-primario);
+    background: var(--azul-primario);
     transform: scale(1.2);
 }
 
@@ -1493,13 +1494,13 @@ header .container {
 }
 
 .section-title {
-    font-family: 'Nunito Sans', sans-serif;
-    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-family: 'Garet', sans-serif;
+    font-size: clamp(2.5rem, 4vw, 3rem);
     font-weight: 600;
     color: var(--azul-primario);
-    margin-bottom: -1.5rem;
+    margin-bottom: -1rem;
     letter-spacing: -0.02em;
-    text-align: center;
+    text-align: start;
     width: 100%;
 }
 
@@ -1509,7 +1510,7 @@ header .container {
     color: var(--marrom-primario);
     /* margin-bottom: 1rem; */
     letter-spacing: 0.025em;
-    text-align: center;
+    text-align: start;
     width: 100%;
 }
 
@@ -1640,6 +1641,295 @@ header .container {
     padding: calc(var(--section-spacing) * 0.5) 0;
     background: var(--branco);
     position: relative;
+}
+
+/* ================= QUEM SOMOS ================= */
+.quem-somos {
+    padding: calc(var(--section-spacing) * 0.5) 0;
+    background:  url('./images/viniciusmelissa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+}
+
+.quem-somos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* background: linear-gradient(135deg, rgba(248, 249, 250, 0.85) 0%, rgba(255, 255, 255, 0.85) 100%); */
+    z-index: 1;
+}
+
+.quem-somos::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--azul-primario) 50%, transparent 100%);
+    z-index: 2;
+}
+
+.quem-somos .container {
+    position: relative;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items:flex-start;
+    z-index: 3;
+    text-align: center;
+}.quem-somos-stats
+
+.quem-somos-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+    max-width: 1200px;
+    margin: 3rem auto 0 auto;
+    text-align: left;
+}
+
+.quem-somos-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.quem-somos-intro,
+.quem-somos-missao,
+.quem-somos-valores {
+    background: var(--branco);
+    padding: 2rem;
+    border-radius: var(--border-radius-grande);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--azul-primario);
+    transition: var(--transicao-suave);
+}
+
+.quem-somos-intro:hover,
+.quem-somos-missao:hover,
+.quem-somos-valores:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-media);
+    border-color: var(--marrom-primario);
+}
+
+.quem-somos-intro h3,
+.quem-somos-missao h3,
+.quem-somos-valores h3 {
+    font-family: 'Garet', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--azul-primario);
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+}
+
+.quem-somos-intro p,
+.quem-somos-missao p {
+    font-size: 1.05rem;
+    color: var(--azul-primario);
+    line-height: 1.7;
+    margin: 0;
+}
+
+.quem-somos-valores ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quem-somos-valores ul li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.8rem 0;
+    font-size: 1.05rem;
+    color: var(--azul-primario);
+    line-height: 1.6;
+    border-bottom: 1px solid rgba(3, 39, 88, 0.1);
+    transition: var(--transicao-suave);
+}
+
+.quem-somos-valores ul li:last-child {
+    border-bottom: none;
+}
+
+.quem-somos-valores ul li:hover {
+    color: var(--marrom-primario);
+    padding-left: 1rem;
+}
+
+.quem-somos-valores ul li i {
+    color: var(--marrom-primario);
+    font-size: 1.1rem;
+    flex-shrink: 0;
+}
+
+.quem-somos-image {
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+    border-radius: var(--border-radius-grande);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    border: 2px solid var(--azul-primario);
+    transition: var(--transicao-suave);
+}
+
+.image-container:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--marrom-primario);
+}
+
+.team-image {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(3, 39, 88, 0.9) 100%);
+    padding: 2rem;
+    color: var(--branco);
+}
+
+.stats-overlay {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item h4 {
+    font-family: 'Garet', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--marrom-primario);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+}
+
+.stat-item p {
+    font-size: 0.9rem;
+    color: var(--branco);
+    margin: 0;
+    opacity: 0.9;
+}
+
+.quem-somos-stats {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3rem;
+    /* margin: 4rem 0 4rem 0; */
+    padding: 1rem 1rem 1rem 0;
+    /* background: linear-gradient(135deg, rgba(3, 39, 88, 0.1) 0%, rgba(14, 82, 194, 0.1) 100%); */
+    border-radius: var(--border-radius-grande);
+    backdrop-filter: blur(10px);
+}
+
+.quem-somos-stats .stat-item {
+    text-align: left;
+    /* padding: 1.5rem; */
+    border-radius: var(--border-radius-medio);
+    transition: all 0.3s ease;
+}
+
+.quem-somos-stats .stat-item:hover {
+    transform: translateY(-5px);
+    /* background: linear-gradient(135deg, rgba(3, 39, 88, 0.2) 0%, rgba(14, 82, 194, 0.2) 100%); */
+}
+
+.quem-somos-stats .stat-number {
+    font-family: 'Garet', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--azul-primario);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.quem-somos-stats .stat-label {
+    font-size: 1rem;
+    color: var(--cinza-escuro);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.quem-somos-cta {
+    /* background: linear-gradient(135deg, var(--azul-primario) 0%, var(--azul-secundario) 100%); */
+    border-radius: var(--border-radius-grande);
+    padding: 3rem 0;
+    /* margin-top: 4rem; */
+    color: var(--branco);
+    text-align: center;
+    /* box-shadow: var(--sombra-media); */
+    position: relative;
+    overflow: hidden;
+}
+
+.quem-somos-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.quem-somos-cta h3 {
+    font-family: 'Garet', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+    position: relative;
+    z-index: 2;
+}
+
+.quem-somos-cta p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 2;
+}
+
+.quem-somos-cta .btn-primary {
+    background: var(--branco);
+    color: var(--azul-primario);
+    border: 2px solid var(--branco);
+    position: relative;
+    z-index: 2;
+}
+
+.quem-somos-cta .btn-primary:hover {
+    background: var(--marrom-primario);
+    color: var(--branco);
+    border-color: var(--marrom-primario);
 }
 
 .contact::before {
@@ -2234,6 +2524,36 @@ header .container {
         gap: 2.5rem;
     }
     
+    .quem-somos-content {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+    
+    .team-image {
+        height: 400px;
+    }
+    
+    .stats-overlay {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .quem-somos-cta {
+        padding: 2.5rem 1.5rem;
+        margin-top: 3rem;
+    }
+    
+    .quem-somos-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+        margin: 3rem 0;
+        padding: 1.5rem;
+    }
+    
+    .quem-somos-stats .stat-number {
+        font-size: 2rem;
+    }
+    
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -2270,8 +2590,8 @@ header .container {
     background: var(--branco);
     border-radius: var(--border-radius-grande);
     overflow: hidden;
-    box-shadow: var(--sombra-suave);
-    border: 2px solid var(--azul-primario);
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+    /* border: 2px solid var(--azul-primario); */
     transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     height: 400px;
 }
@@ -2511,6 +2831,33 @@ header .container {
     .contact-info {
         padding: 2.5rem 1.5rem;
         width: 100%;
+    }
+    
+    .quem-somos-intro,
+    .quem-somos-missao,
+    .quem-somos-valores {
+        padding: 1.5rem;
+    }
+    
+    .quem-somos-cta {
+        padding: 2rem 1rem;
+        margin-top: 2.5rem;
+    }
+    
+    .team-image {
+        height: 300px;
+    }
+    
+    .image-overlay {
+        padding: 1.5rem;
+    }
+    
+    .stat-item h4 {
+        font-size: 1.5rem;
+    }
+    
+    .stat-item p {
+        font-size: 0.8rem;
     }
     
     .portfolio-carousel {
