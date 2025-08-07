@@ -4,6 +4,7 @@
     --azul-primario: rgb(3, 39, 88);     /* Azul principal */
     --azul-secundario: rgb(91, 120, 151);   /* Mesmo azul para consistência */
     --azul-claro: rgb(174, 193, 208);        /* Mesmo azul para acentos */
+    --azul-logo: rgb(3, 39, 88);         /* Azul do logo - mesmo que primário */
     --branco: rgb(255, 255, 255);     /* Branco para fundo premium */
     --marrom-primario: #99592f;  /* Dourado/marrom elegante */
     --marrom-secundario: rgb(172, 108, 52);    /* Mesmo dourado para consistência */
@@ -3012,4 +3013,81 @@ header .container {
     .footer-content {
         padding: 0 12px;
     }
+}
+
+/* ================= ESTILOS DA PÁGINA DE EQUIPE ================= */
+.equipe-photo-gallery {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.photo-container {
+    position: relative;
+    width: 100%;
+    /* border-radius: 12px; */
+    overflow: hidden;
+    box-shadow: var(--sombra-media);
+}
+
+.member-photo {
+    position: relative;
+    min-height: 400px;
+    width: 100%;
+}
+
+.vinicius-showcase {
+    position: relative !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    padding: 4rem !important;
+    min-height: 600px !important;
+}
+
+/* Estilos para elementos posicionados */
+.main-title,
+.main-position, 
+.speciality-info,
+.bim-experience,
+.projects-info,
+.sqm-info,
+.buildings-info,
+.fluir-logo {
+    position: absolute !important;
+    z-index: 10 !important;
+}
+
+.central-photo {
+    position: absolute !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    z-index: 5 !important;
+}
+
+/* Cards da equipe */
+.equipe-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* border-radius: 12px; */
+    padding: 2rem;
+    background: white;
+    box-shadow: var(--sombra-suave);
+}
+
+.equipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra-media);
+}
+
+.equipe-card.active-member {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+    border: 2px solid var(--azul-primario);
+}
+
+.servicos-underline {
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--azul-primario), var(--azul-primario));
+    margin: 0 auto 2rem auto;
+    border-radius: 2px;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fluir Engenharia - Nossa Equipe</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-equipe.css">
     <link rel="stylesheet" href="https://fonts.cdnfonts.com/css/garet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,34 +32,134 @@
     </header>
 
 
-    <section class="equipe" style="padding:120px 0 80px 0;background:#f7f9fc;">
+    <section class="equipe">
         <div class="container">
-
-            <!-- Galeria de fotos da equipe -->
-            <div class="equipe-gallery" style="display:flex;gap:2rem;justify-content:center;margin-bottom:48px;">
-                <div class="equipe-container" style="animation: fadeInUp 1s both;">
-                    <!-- Foto de viniciusmelissa.jpg -->
+            <h2>Nossa Equipe</h2>
+            <div class="servicos-underline"></div>
+            <div class="equipe-grid">
+                <div class="card equipe-card active-member" data-member="vinicius">
+                    <!-- Overlay para melhorar legibilidade do texto -->
+                    <div class="overlay"></div>
+                    <!-- Conteúdo do card -->
+                    <div class="card-content">
+                        <h4>Vinicius Morais</h4>
+                        <p>Engenheiro Civil</p>
+                    </div>
                 </div>
-                <div class="equipe-container-vinicius" style="animation: fadeInUp 1.2s both;">
-                    <!-- Foto de viniciusmorais.jpg -->
+                <div class="card equipe-card" data-member="melissa">
+                    <!-- Overlay para melhorar legibilidade do texto -->
+                    <div class="overlay"></div>
+                    <!-- Conteúdo do card -->
+                    <div class="card-content">
+                        <h4>Melissa Guimarães</h4>
+                        <p>Comercial & Marketing</p>
+                    </div>
                 </div>
             </div>
-
-            <h2 style="text-align:center;font-size:2.2rem;font-weight:800;color:var(--azul-logo);margin-bottom:12px;">Funcionários</h2>
-            <div class="servicos-underline"></div>
-            <div class="equipe-grid" style="display:flex;flex-wrap:wrap;gap:2.5rem;justify-content:center;margin-top:32px;">
-                <div class="card equipe-card" style="max-width:280px;min-width:220px;flex:1 1 220px;align-items:center;animation: fadeInUp 1.4s both;">
-                    <img src="images/viniciusmorais.jpg" alt="Vinicius Morais" style="width:100px;height:100px;border-radius:50%;object-fit:cover;box-shadow:0 2px 12px rgba(0,34,88,0.10);margin-bottom:18px;">
-                    <h4 style="font-size:1.18rem;font-weight:700;color:var(--azul-logo);margin-bottom:6px;text-align:center;">Vinicius Morais</h4>
-                    <p style="font-size:1.05rem;color:#444;text-align:center;">Engenheiro Civil</p>
+            
+            <!-- Galeria de fotos dos funcionários -->
+            <div class="equipe-photo-gallery">
+                <div class="photo-container">
+                    <!-- Foto do Vinicius (ativa por padrão) -->
+                    <div class="member-photo active vinicius-showcase" id="photo-vinicius">
+                        <!-- Foto de fundo -->
+                        <img src="images/viniciusmorais.jpg" alt="Vinicius Morais">
+                        <!-- Overlay para melhorar contraste dos textos -->
+                        <div class="showcase-overlay"></div>
+                        <!-- Container de conteúdo posicionado -->
+                        <div class="content-container">
+                            <!-- Nome principal (topo esquerdo) -->
+                            <div class="main-title">VINICIUS MORAIS</div>
+                            <!-- Cargo principal (topo direito) -->
+                            <div class="main-position">
+                                <div>Sócio Diretor da</div>
+                                <div>Fluir Engenharia</div>
+                            </div>
+                            <!-- Especialidade (esquerda superior) -->
+                            <div class="speciality-info">
+                                <div>Engenheiro Civil,</div>
+                                <div>especialista em</div>
+                                <div>projetos hidrossanitários</div>
+                            </div>
+                            <!-- Metros quadrados (direita superior) -->
+                            <div class="sqm-info">
+                                <div>+ 400.000 m²</div>
+                                <div>projetados</div>
+                            </div>
+                            <!-- Experiência BIM (esquerda meio) -->
+                            <div class="bim-experience">
+                                <div>Experiência em</div>
+                                <div>BIM</div>
+                                <div>desde 2019</div>
+                            </div>
+                            <!-- Prédios e hospitais (direita meio) -->
+                            <div class="buildings-info">
+                                <div>+ 40 prédios</div>
+                                <div>+ 03 hospitais</div>
+                            </div>
+                            <!-- Projetos residenciais (esquerda inferior) -->
+                            <div class="projects-info">
+                                <div>Projetos para</div>
+                                <div>residências</div>
+                                <div>e edifícios verticais</div>
+                            </div>
+                            <!-- Logo (inferior direito) -->
+                            <div class="fluir-logo">
+                                <img src="images/fluirlogo.png" alt="Fluir Engenharia">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Foto da Melissa (layout showcase) -->
+                    <div class="member-photo melissa-showcase" id="photo-melissa">
+                        <!-- Foto de fundo -->
+                        <img src="images/viniciusmelissa.jpg" alt="Melissa Guimarães">
+                        <!-- Overlay para melhorar contraste dos textos -->
+                        <div class="showcase-overlay"></div>
+                        <!-- Container de conteúdo posicionado -->
+                        <div class="content-container">
+                            <!-- Nome principal (topo esquerdo) -->
+                            <div class="main-title">MELISSA GUIMARÃES</div>
+                            <!-- Cargo principal (topo direito) -->
+                            <div class="main-position">
+                                <div>Comercial & Marketing da</div>
+                                <div>Fluir Engenharia</div>
+                            </div>
+                            <!-- Especialidade (esquerda superior) -->
+                            <div class="speciality-info">
+                                <div>Especialista em</div>
+                                <div>Relacionamento</div>
+                                <div>com Clientes</div>
+                            </div>
+                            <!-- Experiência (direita superior) -->
+                            <div class="sqm-info">
+                                <div>+ 5 anos</div>
+                                <div>de experiência</div>
+                            </div>
+                            <!-- Gestão comercial (esquerda meio) -->
+                            <div class="bim-experience">
+                                <div>Gestão</div>
+                                <div>Comercial</div>
+                                <div>e Vendas</div>
+                            </div>
+                            <!-- Atendimento (direita meio) -->
+                            <div class="buildings-info">
+                                <div>Atendimento</div>
+                                <div>Personalizado</div>
+                            </div>
+                            <!-- Marketing digital (esquerda inferior) -->
+                            <div class="projects-info">
+                                <div>Marketing</div>
+                                <div>Digital</div>
+                                <div>e Estratégico</div>
+                            </div>
+                            <!-- Logo (inferior direito) -->
+                            <div class="fluir-logo">
+                                <img src="images/fluirlogo.png" alt="Fluir Engenharia">
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="card equipe-card" style="max-width:280px;min-width:220px;flex:1 1 220px;align-items:center;animation: fadeInUp 1.6s both;">
-                    <img src="images/equipe/melissa.jpg" alt="Melissa Souza" style="width:100px;height:100px;border-radius:50%;object-fit:cover;box-shadow:0 2px 12px rgba(0,34,88,0.10);margin-bottom:18px;">
-                    <h4 style="font-size:1.18rem;font-weight:700;color:var(--azul-logo);margin-bottom:6px;text-align:center;">Melissa Guimarães</h4>
-                    <p style="font-size:1.05rem;color:#444;text-align:center;">Comercial & Marketing</p>
-                </div>
-   
-                <!-- Adicione mais cards conforme necessário -->
             </div>
             
 
@@ -93,17 +194,16 @@
                 </div>
                 <div class="footer-section">
                     <h4 class="footer-section-title">Contato</h4>
-                    <p class="footer-contact"><i class="fas fa-phone"></i> (99) 99999-9999</p>
-                    <p class="footer-contact"><i class="fas fa-envelope"></i> contato@fluirengenharia.com.br</p>
-                    <p class="footer-contact"><i class="fas fa-map-marker-alt"></i> Rua Exemplo, 123 - Cidade/Estado</p>
+                    <p class="footer-contact"><i class="fas fa-phone"></i> (43) 9 8403-9568</p>
+                    <p class="footer-contact"><i class="fas fa-envelope"></i> vinicius@fluirengenharia.onmicrosoft.com</p>
+                    <p class="footer-contact"><i class="fas fa-map-marker-alt"></i> Londrina - PR</p>
                 </div>
                 <div class="footer-section">
                     <h4 class="footer-section-title">Redes Sociais</h4>
                     <div class="footer-social">
-                        <a href="#" target="_blank" class="footer-social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" target="_blank" class="footer-social-link"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank" class="footer-social-link"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/fluir.eng/" target="_blank" class="footer-social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/fluir-eng" target="_blank" class="footer-social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://wa.me/5543984039568" target="_blank" class="footer-social-link"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -112,14 +212,80 @@
             </div>
         </div>
     </footer>
-    <div class="whatsapp-float" id="whatsappButton">
+    <a href="https://wa.me/5543984039568" target="_blank" class="whatsapp-float" id="whatsappButton">
         <div class="whatsapp-icon">
             <i class="fab fa-whatsapp"></i>
         </div>
         <div class="whatsapp-tooltip">
             Fale conosco no WhatsApp!
         </div>
-    </div>
+    </a>
     <script src="script.js"></script>
+    <script>
+    // Interação da galeria de fotos da equipe
+    document.addEventListener('DOMContentLoaded', function() {
+        const equipeCards = document.querySelectorAll('.equipe-card');
+        const memberPhotos = document.querySelectorAll('.member-photo');
+        
+        // Função para mostrar foto do membro
+        function showMemberPhoto(memberId) {
+            // Esconder todas as fotos
+            memberPhotos.forEach(photo => {
+                photo.style.display = 'none';
+                photo.classList.remove('active');
+            });
+            
+            // Mostrar foto selecionada
+            const targetPhoto = document.getElementById(`photo-${memberId}`);
+            if (targetPhoto) {
+                targetPhoto.style.display = 'block';
+                targetPhoto.classList.add('active');
+            }
+            
+            // Atualizar cards ativos
+            equipeCards.forEach(card => {
+                card.classList.remove('active-member');
+                card.style.transform = '';
+                card.style.boxShadow = '';
+                card.style.border = '';
+            });
+            
+            // Ativar card selecionado
+            const activeCard = document.querySelector(`[data-member="${memberId}"]`);
+            if (activeCard) {
+                activeCard.classList.add('active-member');
+                activeCard.style.transform = 'translateY(-8px)';
+                activeCard.style.boxShadow = '0 12px 40px rgba(0,34,88,0.2)';
+                activeCard.style.border = '2px solid var(--azul-primario)';
+            }
+        }
+        
+        // Adicionar event listeners aos cards
+        equipeCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const memberId = this.getAttribute('data-member');
+                showMemberPhoto(memberId);
+            });
+            
+            // Hover effects
+            card.addEventListener('mouseenter', function() {
+                if (!this.classList.contains('active-member')) {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.boxShadow = '0 8px 25px rgba(0,34,88,0.15)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                if (!this.classList.contains('active-member')) {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                }
+            });
+        });
+        
+        // Inicializar com Vinicius ativo
+        showMemberPhoto('vinicius');
+    });
+    </script>
 </body>
 </html>

@@ -1,0 +1,589 @@
+/* ====================
+   ESTILOS DA PÁGINA EQUIPE
+   ==================== */
+
+/* Seção Equipe */
+.equipe {
+    padding: 120px 0 80px 0;
+    background: #f7f9fc;
+}
+
+.equipe h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--azul-logo);
+    margin-bottom: 12px;
+}
+
+/* Grid da Equipe */
+.equipe-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+/* Cards da Equipe */
+.equipe-card {
+    max-width: 280px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    align-items: center;
+    animation: fadeInUp 1.4s both;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    margin: 0;
+}
+
+.equipe-card.active-member[data-member="vinicius"],
+.equipe-card[data-member="vinicius"] {
+    background-image: url('images/viniciusmorais.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.equipe-card[data-member="melissa"] {
+    background-image: url('images/viniciusmelissa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    min-height: 200px;
+    animation: fadeInUp 1.6s both;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.equipe-card[data-member="melissa"].active-member {
+    background-image: url('images/viniciusmelissa.jpg');
+}
+
+/* Overlay do Card Vinicius */
+.equipe-card[data-member="vinicius"] .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+/* Overlay do Card Melissa */
+.equipe-card[data-member="melissa"] .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+}
+
+/* Conteúdo do Card Vinicius */
+.equipe-card[data-member="vinicius"] .card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 8px 8px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Conteúdo do Card Melissa */
+.equipe-card[data-member="melissa"] .card-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0 0 8px 8px;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.equipe-card h4 {
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: var(--azul-logo);
+    margin-bottom: 4px;
+    margin-top: 0;
+    text-align: center;
+}
+
+.equipe-card p {
+    font-size: 1.05rem;
+    color: #444;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+/* Galeria de Fotos */
+.equipe-photo-gallery {
+    margin-top: 48px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-container {
+    position: relative;
+    background: #fff;
+    box-shadow: 0 4px 20px rgba(0,34,88,0.12);
+    transition: all 0.3s ease;
+}
+
+/* Showcase do Vinicius */
+.vinicius-showcase {
+    display: block;
+    position: relative;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vinicius-showcase img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.vinicius-showcase .showcase-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%);
+    z-index: 2;
+}
+
+.vinicius-showcase .content-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* Showcase da Melissa */
+.melissa-showcase {
+    display: block;
+    position: relative;
+    min-height: 600px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.melissa-showcase img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.melissa-showcase .showcase-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.2) 100%);
+    z-index: 2;
+}
+
+.melissa-showcase .content-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* Elementos do Showcase */
+.main-title {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: #D4A574;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    animation: fadeIn 1s ease 0.2s both;
+}
+
+.main-position {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    text-align: right;
+    animation: slideInRight 0.8s ease 0.4s both;
+}
+
+.main-position div:first-child {
+    font-size: 1.2rem;
+    color: #D4A574;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.main-position div:last-child {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #032758;
+}
+
+.speciality-info {
+    position: absolute;
+    top: 10rem;
+    left: 2rem;
+    animation: slideInLeft 0.8s ease 0.6s both;
+}
+
+.speciality-info div:first-child {
+    color: #032758;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.speciality-info div:nth-child(2) {
+    color: #D4A574;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.speciality-info div:last-child {
+    color: #3e4347;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.sqm-info {
+    position: absolute;
+    top: 10rem;
+    right: 2rem;
+    text-align: right;
+    animation: slideInRight 0.8s ease 1.2s both;
+}
+
+.sqm-info div:first-child {
+    color: #032758;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.sqm-info div:last-child {
+    color: #D4A574;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.bim-experience {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+    animation: slideInLeft 0.8s ease 0.8s both;
+}
+
+.bim-experience div:first-child {
+    color: #032758;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.bim-experience div:nth-child(2) {
+    color: #D4A574;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.bim-experience div:last-child {
+    color: #3e4347;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.buildings-info {
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    text-align: right;
+    transform: translateY(-50%);
+    animation: slideInRight 0.8s ease 1.4s both;
+}
+
+.buildings-info div {
+    color: #032758;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.buildings-info div:first-child {
+    margin-bottom: 0.2rem;
+}
+
+.projects-info {
+    position: absolute;
+    bottom: 4rem;
+    left: 2rem;
+    animation: slideInLeft 0.8s ease 1s both;
+}
+
+.projects-info div:first-child {
+    color: #032758;
+    font-size: 1.3rem;
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+}
+
+.projects-info div:nth-child(2) {
+    color: #D4A574;
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.projects-info div:last-child {
+    color: #3e4347;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.fluir-logo {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    animation: fadeIn 0.8s ease 1.6s both;
+    width: 80px;
+    height: auto;
+    overflow: visible;
+}
+
+.fluir-logo img {
+    width: 100%;
+    height: auto;
+    max-width: 80px;
+    object-fit: contain;
+    position: relative;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+}
+
+/* Foto dos Membros */
+.member-photo {
+    display: none;
+    animation: fadeIn 0.5s ease;
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+}
+
+.member-photo.active {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .vinicius-showcase,
+    .melissa-showcase {
+        min-height: 500px !important;
+    }
+    
+    .main-title {
+        font-size: 2.8rem !important;
+        top: 1.5rem !important;
+        left: 1.5rem !important;
+    }
+    
+    .main-position {
+        top: 1.5rem !important;
+        right: 1.5rem !important;
+    }
+    
+    .main-position div:last-child {
+        font-size: 1.6rem !important;
+    }
+    
+    .speciality-info {
+        top: 8rem !important;
+        left: 1.5rem !important;
+    }
+    
+    .sqm-info {
+        top: 8rem !important;
+        right: 1.5rem !important;
+    }
+    
+    .bim-experience {
+        left: 1.5rem !important;
+    }
+    
+    .buildings-info {
+        right: 1.5rem !important;
+    }
+    
+    .projects-info {
+        bottom: 5rem !important;
+        left: 1.5rem !important;
+    }
+    
+    .fluir-logo {
+        bottom: 1.5rem !important;
+        right: 1.5rem !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .vinicius-showcase,
+    .melissa-showcase {
+        min-height: 450px !important;
+    }
+    
+    .main-title {
+        font-size: 2rem !important;
+        top: 1rem !important;
+        left: 1rem !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .main-position {
+        top: 1rem !important;
+        right: 1rem !important;
+    }
+    
+    .main-position div:first-child {
+        font-size: 0.9rem !important;
+    }
+    
+    .main-position div:last-child {
+        font-size: 1.2rem !important;
+    }
+    
+    .speciality-info {
+        top: 6rem !important;
+        left: 1rem !important;
+    }
+    
+    .speciality-info div {
+        font-size: 0.9rem !important;
+    }
+    
+    .speciality-info div:last-child {
+        font-size: 1rem !important;
+    }
+    
+    .sqm-info {
+        top: 6rem !important;
+        right: 1rem !important;
+    }
+    
+    .sqm-info div {
+        font-size: 0.9rem !important;
+    }
+    
+    .bim-experience {
+        left: 1rem !important;
+    }
+    
+    .bim-experience div {
+        font-size: 0.9rem !important;
+    }
+    
+    .bim-experience div:nth-child(2),
+    .bim-experience div:last-child {
+        font-size: 1rem !important;
+    }
+    
+    .buildings-info {
+        right: 1rem !important;
+    }
+    
+    .buildings-info div {
+        font-size: 0.9rem !important;
+    }
+    
+    .projects-info {
+        bottom: 3rem !important;
+        left: 1rem !important;
+    }
+    
+    .projects-info div {
+        font-size: 0.9rem !important;
+    }
+    
+    .projects-info div:last-child {
+        font-size: 1rem !important;
+    }
+    
+    .fluir-logo {
+        bottom: 1rem !important;
+        right: 1rem !important;
+        width: 60px !important;
+    }
+    
+    .fluir-logo img {
+        max-width: 60px !important;
+    }
+    
+    .equipe-photo-gallery {
+        margin-top: 32px !important;
+        padding: 0 10px !important;
+    }
+    
+    .member-photo {
+        min-height: 450px !important;
+    }
+    
+    .equipe-grid {
+        gap: 1.5rem !important;
+        margin-top: 24px !important;
+    }
+    
+    .equipe-card {
+        min-width: 200px !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+}
