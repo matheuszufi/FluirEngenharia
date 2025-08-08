@@ -3239,7 +3239,7 @@ header .container {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        background: var(--branco);
+        background: var(--azul-logo);
         border-radius: var(--border-radius-grande);
         box-shadow: var(--sombra-media);
         overflow: hidden;
@@ -3322,7 +3322,7 @@ header .container {
         right: 0;
         padding: 0.8rem;
         font-size: 0.8rem;
-        background: var(--branco);
+        background: var(--azul-logo;
         color: var(--azul-primario);
         border-radius: 0 0 6px 6px;
         z-index: 2;
