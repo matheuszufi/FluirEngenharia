@@ -65,3 +65,101 @@ document.addEventListener('DOMContentLoaded', function() {
     // Continuar o loop infinito
     setInterval(showNextDepoimento, animationDuration);
 });
+
+// Portfolio Carousel com efeito de z-index
+document.addEventListener('DOMContentLoaded', function() {
+    
+    // Função para inicializar carousel
+    function initCarousel(carouselId, prevBtnId, nextBtnId, indicatorsId) {
+        const carousel = document.getElementById(carouselId);
+        if (!carousel) return;
+        
+        const slides = carousel.querySelectorAll('.portfolio-card');
+        const prevBtn = document.getElementById(prevBtnId);
+        const nextBtn = document.getElementById(nextBtnId);
+        const indicators = document.getElementById(indicatorsId);
+        const indicatorBtns = indicators ? indicators.querySelectorAll('.indicator') : [];
+        
+        if (slides.length === 0) return;
+        
+        let currentIndex = 0;
+        
+        function updateCarousel() {
+            // Limpar todas as classes primeiro
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'prev', 'next');
+            });
+            
+            // Definir posições baseadas no índice atual
+            slides.forEach((slide, index) => {
+                if (index === currentIndex) {
+                    slide.classList.add('active');
+                } else if (index === (currentIndex - 1 + slides.length) % slides.length) {
+                    slide.classList.add('prev');
+                } else if (index === (currentIndex + 1) % slides.length) {
+                    slide.classList.add('next');
+                }
+            });
+            
+            // Atualizar indicadores
+            indicatorBtns.forEach((btn, index) => {
+                btn.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % slides.length;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+            updateCarousel();
+        }
+        
+        function goToSlide(index) {
+            if (index >= 0 && index < slides.length) {
+                currentIndex = index;
+                updateCarousel();
+            }
+        }
+        
+        // Event listeners apenas para interação manual
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                nextSlide();
+            });
+        }
+        
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                prevSlide();
+            });
+        }
+        
+        indicatorBtns.forEach((btn, index) => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                goToSlide(index);
+            });
+        });
+        
+        // Inicializar com o primeiro slide sempre ativo
+        currentIndex = 0;
+        updateCarousel();
+        
+        // Garantir que sempre há uma imagem ativa após pequeno delay
+        setTimeout(() => {
+            if (!carousel.querySelector('.portfolio-card.active')) {
+                currentIndex = 0;
+                updateCarousel();
+            }
+        }, 100);
+    }
+    
+    // Inicializar ambos os carousels
+    initCarousel('portfolioCarousel', 'prevBtn', 'nextBtn', 'carouselIndicators');
+    initCarousel('portfolioCarousel2', 'prevBtn2', 'nextBtn2', 'carouselIndicators2');
+});
