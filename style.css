@@ -3077,14 +3077,34 @@ header .container {
     }
     
     .problemas-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
         width: 100%;
     }
     
     .problema-item {
         width: 100%;
         min-width: unset;
+        min-height: 280px;
+        padding: 1.2rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .problema-item h4 {
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+    
+    .problema-item p {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        margin: 0;
+    }
+    
+    .problema-icon {
+        font-size: 2rem;
+        margin-bottom: 0.8rem;
     }
     
     .diferenciais-grid {
@@ -3188,7 +3208,8 @@ header .container {
         padding: 0;
     }
     
-    .portfolio-grid {
+    #portfolioCarousel,
+    #portfolioCarousel2 {
         width: 100%;
         max-width: 100%;
         height: 450px;
@@ -3196,6 +3217,7 @@ header .container {
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
 
     /* Carousel Responsive Styles */
@@ -3205,7 +3227,8 @@ header .container {
         position: relative;
     }
     
-    .portfolio-card {
+    #portfolioCarousel .portfolio-card,
+    #portfolioCarousel2 .portfolio-card {
         width: 100%;
         max-width: 90vw;
         height: auto;
@@ -3216,28 +3239,39 @@ header .container {
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        background: var(--branco);
+        border-radius: var(--border-radius-grande);
+        box-shadow: var(--sombra-media);
+        overflow: hidden;
     }
     
-    .portfolio-card.active {
+    #portfolioCarousel .portfolio-card.active,
+    #portfolioCarousel2 .portfolio-card.active {
         transform: translate(-50%, -50%) scale(1);
         z-index: 5;
         opacity: 1;
+        visibility: visible;
     }
     
-    .portfolio-card.prev {
+    #portfolioCarousel .portfolio-card.prev,
+    #portfolioCarousel2 .portfolio-card.prev {
         transform: translate(-50%, -50%) translateX(-30px) scale(0.95);
         opacity: 0.6;
         z-index: 3;
+        visibility: visible;
     }
     
-    .portfolio-card.next {
+    #portfolioCarousel .portfolio-card.next,
+    #portfolioCarousel2 .portfolio-card.next {
         transform: translate(-50%, -50%) translateX(30px) scale(0.95);
         opacity: 0.6;
         z-index: 3;
+        visibility: visible;
     }
     
     /* Mobile - Layout das duas fotos em coluna */
-    .portfolio-half {
+    #portfolioCarousel .portfolio-half,
+    #portfolioCarousel2 .portfolio-half {
         flex: 1;
         min-height: 200px;
         max-height: 200px;
@@ -3248,25 +3282,30 @@ header .container {
         width: 100%;
     }
     
-    .portfolio-half-left,
-    .portfolio-half-right {
+    #portfolioCarousel .portfolio-half-left,
+    #portfolioCarousel .portfolio-half-right,
+    #portfolioCarousel2 .portfolio-half-left,
+    #portfolioCarousel2 .portfolio-half-right {
         width: 100%;
         height: 200px;
     }
     
     /* Mobile - Remover hover das fotos inativas */
-    .portfolio-card.prev:hover {
+    #portfolioCarousel .portfolio-card.prev:hover,
+    #portfolioCarousel2 .portfolio-card.prev:hover {
         transform: translate(-50%, -50%) translateX(-30px) scale(0.95);
         opacity: 0.6;
     }
     
-    .portfolio-card.next:hover {
+    #portfolioCarousel .portfolio-card.next:hover,
+    #portfolioCarousel2 .portfolio-card.next:hover {
         transform: translate(-50%, -50%) translateX(30px) scale(0.95);
         opacity: 0.6;
     }
     
     /* Mobile - Estilos específicos das imagens */
-    .portfolio-img {
+    #portfolioCarousel .portfolio-img,
+    #portfolioCarousel2 .portfolio-img {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -3275,7 +3314,8 @@ header .container {
         display: block;
     }
     
-    .portfolio-content {
+    #portfolioCarousel .portfolio-content,
+    #portfolioCarousel2 .portfolio-content {
         position: relative;
         bottom: 0;
         left: 0;
@@ -3290,21 +3330,24 @@ header .container {
         box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
     
-    .portfolio-content h4 {
+    #portfolioCarousel .portfolio-content h4,
+    #portfolioCarousel2 .portfolio-content h4 {
         font-size: 0.85rem;
         line-height: 1.3;
         margin: 0;
         font-weight: 500;
     }
     
-    /* Mobile - Botões de navegação */
-    .carousel-controls {
+    /* Mobile - Botões de navegação - Ambos os carousels */
+    #portfolioCarousel + .carousel-controls,
+    #portfolioCarousel2 + .carousel-controls {
         position: relative;
         z-index: 10;
         margin-top: 1rem;
     }
     
-    .carousel-btn {
+    #prevBtn, #nextBtn,
+    #prevBtn2, #nextBtn2 {
         width: 45px;
         height: 45px;
         font-size: 1.1rem;
@@ -3323,27 +3366,31 @@ header .container {
         cursor: pointer;
     }
     
-    .carousel-prev {
+    #prevBtn, #prevBtn2 {
         left: 15px;
     }
     
-    .carousel-next {
+    #nextBtn, #nextBtn2 {
         right: 15px;
     }
     
-    .carousel-btn:hover {
+    #prevBtn:hover, #nextBtn:hover,
+    #prevBtn2:hover, #nextBtn2:hover {
         background: var(--azul-primario);
         transform: translateY(-50%) scale(1.1);
     }
     
-    /* Mobile - Indicadores */
-    .carousel-indicators {
+    /* Mobile - Indicadores - Ambos os carousels */
+    #carouselIndicators,
+    #carouselIndicators2 {
         margin-top: 1rem;
         gap: 6px;
         justify-content: center;
+        display: flex;
     }
     
-    .indicator {
+    #carouselIndicators .indicator,
+    #carouselIndicators2 .indicator {
         width: 10px;
         height: 10px;
         border-radius: 50%;
@@ -3352,7 +3399,8 @@ header .container {
         transition: all 0.3s ease;
     }
     
-    .indicator.active {
+    #carouselIndicators .indicator.active,
+    #carouselIndicators2 .indicator.active {
         background: var(--azul-primario);
         transform: scale(1.2);
     }
