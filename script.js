@@ -26,3 +26,42 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // Outras animações podem ser adicionadas aqui para outros elementos
+
+// Animação dos depoimentos - mostrar 1 por vez no mesmo lugar em loop infinito
+document.addEventListener('DOMContentLoaded', function() {
+    const depoimentoCards = document.querySelectorAll('.depoimento-card');
+    
+    if (depoimentoCards.length === 0) return;
+    
+    let currentIndex = 0;
+    const animationDuration = 3000; // 3 segundos cada depoimento
+    
+    // Inicialmente esconder todos os cards e posicionar
+    depoimentoCards.forEach((card, index) => {
+        card.classList.add('hidden');
+        card.style.transform = 'translate(-50%, -50%) translateY(30px) scale(0.9)';
+    });
+    
+    function showNextDepoimento() {
+        // Esconder todos os cards primeiro
+        depoimentoCards.forEach(card => {
+            card.classList.remove('visible');
+            card.classList.add('hidden');
+        });
+        
+        // Mostrar o depoimento atual após um pequeno delay
+        setTimeout(() => {
+            depoimentoCards[currentIndex].classList.remove('hidden');
+            depoimentoCards[currentIndex].classList.add('visible');
+        }, 300); // Delay para suavizar a transição
+        
+        // Avançar para o próximo depoimento
+        currentIndex = (currentIndex + 1) % depoimentoCards.length;
+    }
+    
+    // Mostrar o primeiro depoimento imediatamente
+    showNextDepoimento();
+    
+    // Continuar o loop infinito
+    setInterval(showNextDepoimento, animationDuration);
+});
