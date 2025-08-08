@@ -3191,65 +3191,78 @@ header .container {
     .portfolio-grid {
         width: 100%;
         max-width: 100%;
-        height: 350px;
+        height: 450px;
         padding: 0 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* Carousel Responsive Styles */
     .carousel-container {
-        padding: 8px 10px;
+        padding: 10px;
         overflow: visible;
+        position: relative;
     }
     
     .portfolio-card {
         width: 100%;
-        max-width: 85vw;
-        height: 350px;
-        min-height: 350px;
+        max-width: 90vw;
+        height: auto;
+        min-height: 400px;
         display: flex;
         flex-direction: column;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
     }
     
     .portfolio-card.active {
-        transform: translateX(0) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+        z-index: 5;
+        opacity: 1;
     }
     
     .portfolio-card.prev {
-        transform: translateX(-40px) scale(0.9);
-        opacity: 0.7;
+        transform: translate(-50%, -50%) translateX(-30px) scale(0.95);
+        opacity: 0.6;
+        z-index: 3;
     }
     
     .portfolio-card.next {
-        transform: translateX(40px) scale(0.9);
-        opacity: 0.7;
+        transform: translate(-50%, -50%) translateX(30px) scale(0.95);
+        opacity: 0.6;
+        z-index: 3;
     }
     
-    /* Mobile - Layout das duas fotos */
-    .portfolio-card {
-        flex-direction: row;
-    }
-    
+    /* Mobile - Layout das duas fotos em coluna */
     .portfolio-half {
         flex: 1;
-        min-height: 350px;
-        max-height: 350px;
+        min-height: 200px;
+        max-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
     }
     
     .portfolio-half-left,
     .portfolio-half-right {
-        width: 50%;
-        height: 100%;
+        width: 100%;
+        height: 200px;
     }
     
     /* Mobile - Remover hover das fotos inativas */
     .portfolio-card.prev:hover {
-        transform: translateX(-40px) scale(0.9);
-        opacity: 0.7;
+        transform: translate(-50%, -50%) translateX(-30px) scale(0.95);
+        opacity: 0.6;
     }
     
     .portfolio-card.next:hover {
-        transform: translateX(40px) scale(0.9);
-        opacity: 0.7;
+        transform: translate(-50%, -50%) translateX(30px) scale(0.95);
+        opacity: 0.6;
     }
     
     /* Mobile - Estilos específicos das imagens */
@@ -3257,34 +3270,44 @@ header .container {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        max-height: 350px;
-        border-radius: 8px;
+        max-height: 200px;
+        border-radius: 6px;
+        display: block;
     }
     
     .portfolio-content {
-        position: absolute;
+        position: relative;
         bottom: 0;
         left: 0;
         right: 0;
         padding: 0.8rem;
         font-size: 0.8rem;
-        background: linear-gradient(transparent, rgba(3, 39, 88, 0.9));
-        color: var(--branco);
-        border-radius: 0 0 8px 8px;
+        background: var(--branco);
+        color: var(--azul-primario);
+        border-radius: 0 0 6px 6px;
+        z-index: 2;
+        text-align: center;
+        box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
     }
     
     .portfolio-content h4 {
         font-size: 0.85rem;
-        line-height: 1.2;
+        line-height: 1.3;
         margin: 0;
-        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        font-weight: 500;
     }
     
     /* Mobile - Botões de navegação */
+    .carousel-controls {
+        position: relative;
+        z-index: 10;
+        margin-top: 1rem;
+    }
+    
     .carousel-btn {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+        width: 45px;
+        height: 45px;
+        font-size: 1.1rem;
         border-radius: 50%;
         background: rgba(3, 39, 88, 0.9);
         border: 2px solid var(--branco);
@@ -3292,20 +3315,25 @@ header .container {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        z-index: 10;
+        z-index: 15;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--branco);
+        cursor: pointer;
     }
     
     .carousel-prev {
-        left: 5px;
+        left: 15px;
     }
     
     .carousel-next {
-        right: 5px;
+        right: 15px;
     }
     
     .carousel-btn:hover {
         background: var(--azul-primario);
-        transform: translateY(-50%) scale(1.05);
+        transform: translateY(-50%) scale(1.1);
     }
     
     /* Mobile - Indicadores */
