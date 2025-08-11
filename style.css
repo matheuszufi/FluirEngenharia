@@ -387,7 +387,7 @@ header .container {
 
 .hero-content {
     flex: 1;
-    max-width: 650px;
+    max-width: 750px;
     animation: fadeInUp 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -456,7 +456,7 @@ header .container {
     margin-bottom: 3rem;
     line-height: 1.7;
     font-weight: 400;
-    max-width: 580px;
+    max-width: 650px;
 }
 
 .highlight {
@@ -1545,7 +1545,7 @@ header .container {
     color: var(--azul-primario);
     /* margin-bottom: -1rem; */
     /* letter-spacing: -0.02em; */
-    text-align: start;
+    text-align: center;
     width: 100%;
 }
 
@@ -1555,7 +1555,7 @@ header .container {
     color: var(--marrom-primario);
     /* margin-bottom: 1rem; */
     letter-spacing: 0.025em;
-    text-align: start;
+    text-align: center;
     width: 100%;
 }
 
@@ -3322,7 +3322,7 @@ header .container {
         right: 0;
         padding: 0.8rem;
         font-size: 0.8rem;
-        background: var(--azul-logo;
+        background: var(--azul-logo);
         color: var(--azul-primario);
         border-radius: 0 0 6px 6px;
         z-index: 2;
