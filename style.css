@@ -2166,6 +2166,7 @@ header .container {
     color: var(--azul-primario);
     /* margin-bottom: 1rem; */
     letter-spacing: -0.02em;
+    margin: 2rem;
 }
 
 .contact-subtitle {
@@ -2396,7 +2397,7 @@ header .container {
 .footer-logo-section {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    /* gap: 1.5rem; */
 }
 
 .footer-logo-img {
@@ -2409,7 +2410,7 @@ header .container {
 .footer-logo-title {
     font-family: 'Nunito Sans', sans-serif;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 800;
     color: var(--marrom-primario);
     margin-bottom: 0.8rem;
     letter-spacing: -0.01em;
