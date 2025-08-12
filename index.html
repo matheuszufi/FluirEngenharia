@@ -13,6 +13,9 @@
     
     <!-- Font Awesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- EmailJS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
     <!-- Header -->
     <header class="header">
@@ -1204,9 +1207,113 @@
         initExcelenciaNavigation();
         initClientesCarousel();
         initScrollAnimations();
+        initContactForm();
         
         console.log('Functions initialized');
     });
+
+    // ========== CONTACT FORM ==========
+    function initContactForm() {
+        // Inicializar EmailJS
+        emailjs.init("YOUR_PUBLIC_KEY"); // Substitua pela sua chave pública do EmailJS
+        
+        const contactForm = document.getElementById('contactForm');
+        
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Obter dados do formulário
+                const formData = new FormData(contactForm);
+                const templateParams = {
+                    from_name: formData.get('name'),
+                    from_email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    message: formData.get('message'),
+                    to_name: 'Fluir Engenharia'
+                };
+                
+                // Mostrar loading
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Enviando...';
+                submitBtn.disabled = true;
+                
+                // Enviar email
+                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                    .then(function(response) {
+                        console.log('SUCCESS!', response.status, response.text);
+                        
+                        // Mostrar mensagem de sucesso
+                        showMessage('Mensagem enviada com sucesso! Entraremos em contato em breve.', 'success');
+                        
+                        // Limpar formulário
+                        contactForm.reset();
+                    })
+                    .catch(function(error) {
+                        console.log('FAILED...', error);
+                        
+                        // Mostrar mensagem de erro
+                        showMessage('Erro ao enviar mensagem. Tente novamente ou entre em contato via WhatsApp.', 'error');
+                    })
+                    .finally(function() {
+                        // Restaurar botão
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+            });
+        }
+    }
+    
+    function showMessage(message, type) {
+        // Criar elemento de mensagem
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `contact-message contact-message-${type}`;
+        messageDiv.textContent = message;
+        
+        // Adicionar estilos
+        messageDiv.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+            z-index: 9999;
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+            ${type === 'success' ? 'background-color: #4CAF50;' : 'background-color: #f44336;'}
+        `;
+        
+        // Adicionar ao body
+        document.body.appendChild(messageDiv);
+        
+        // Remover após 5 segundos
+        setTimeout(() => {
+            messageDiv.style.animation = 'slideOut 0.3s ease';
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.parentNode.removeChild(messageDiv);
+                }
+            }, 300);
+        }, 5000);
+    }
+    
+    // Adicionar CSS para animações
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+    `;
+    document.head.appendChild(style);
     </script>
 </body>
 </html>
