@@ -473,6 +473,7 @@ header .container {
     font-size: 36px;
     color: var(--azul-primario);
     font-weight: 600;
+    line-height: 0.9;
 }
 
 .hero-buttons {

@@ -1220,8 +1220,8 @@
 
     // ========== CONTACT FORM ==========
     function initContactForm() {
-        // Inicializar EmailJS
-        emailjs.init("YOUR_PUBLIC_KEY"); // Substitua pela sua chave pública do EmailJS
+        // Inicializar EmailJS - Substitua YOUR_PUBLIC_KEY pela sua chave pública
+        emailjs.init("J5X8abXzKrqgXdsH1"); 
         
         const contactForm = document.getElementById('contactForm');
         
@@ -1246,7 +1246,7 @@
                 submitBtn.disabled = true;
                 
                 // Enviar email
-                emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                emailjs.send('service_la4iss8', 'template_g2oerh7', templateParams)
                     .then(function(response) {
                         console.log('SUCCESS!', response.status, response.text);
                         
