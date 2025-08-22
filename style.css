@@ -395,6 +395,7 @@ header .container {
     display: inline-flex;
     margin-bottom: 2rem;
     width: auto;
+    max-width: fit-content;
     align-items: center;
     background-color: rgba(3, 38, 88, 0.1);
     /* padding: 1rem 1.5rem; */
@@ -413,6 +414,9 @@ header .container {
     color: var(--branco);
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     min-height: 3rem;
+    width: auto;
+    max-width: 100%;
+    padding: 0.5rem 1rem;
 }
 
 .typing-text {
@@ -3006,14 +3010,19 @@ header .container {
     
     .hero-stats {
         gap: 1.5rem;
-        width: 100%;
+        width: auto;
+        max-width: 95%;
         margin-bottom: 1.5rem;
+        align-self: flex-start;
     }
     
     .typing-animation {
         font-size: clamp(1.2rem, 4vw, 1.8rem);
         min-height: 2.5rem;
-        width: 100%;
+        width: auto;
+        max-width: 100%;
+        padding: 0.5rem 1rem;
+        text-align: left;
     }
     
     .hero-buttons {
