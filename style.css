@@ -2877,11 +2877,14 @@ header .container {
 /* ================= BIM GIFS ================= */
 .bim-gifs-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
     margin: 4rem 0;
     padding: 2rem 0;
     justify-content: center;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .bim-gif-wrapper {
@@ -3565,10 +3568,11 @@ header .container {
     }
     
     .bim-gifs-container {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
         margin: 2rem 0;
         padding: 1rem 0;
+        max-width: 95%;
     }
     
     .bim-gif-wrapper {
@@ -3660,4 +3664,19 @@ header .container {
     background: linear-gradient(90deg, var(--azul-primario), var(--azul-primario));
     margin: 0 auto 2rem auto;
     border-radius: 2px;
+}
+
+/* Media query para smartphones pequenos - 1 coluna para GIFs */
+@media (max-width: 360px) {
+    .bim-gifs-container {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem;
+        max-width: 100%;
+        padding: 1rem 0.5rem;
+    }
+    
+    .bim-gif-wrapper {
+        max-width: 100%;
+        margin: 0;
+    }
 }
