@@ -1350,7 +1350,7 @@ header .container {
 .portfolio-half .portfolio-img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
     transition: transform 0.6s ease;
     /* background: var(--branco); */
@@ -2874,6 +2874,45 @@ header .container {
     text-decoration: underline;
 }
 
+/* ================= BIM GIFS ================= */
+.bim-gifs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+    margin: 4rem 0;
+    padding: 2rem 0;
+    justify-content: center;
+}
+
+.bim-gif-wrapper {
+    position: relative;
+    background: var(--branco);
+    border-radius: var(--border-radius-grande);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicao-elastica);
+    border: 1px solid var(--azul-primario);
+}
+
+.bim-gif-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+    border-color: var(--marrom-primario);
+}
+
+.bim-gif {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.bim-gif-wrapper:hover .bim-gif {
+    transform: scale(1.05);
+}
+
 @media (max-width: 768px) {
     .diferenciais-grid {
         grid-template-columns: 1fr;
@@ -3523,6 +3562,22 @@ header .container {
         width: 100%;
         max-width: 100%;
         height: 300px;
+    }
+    
+    .bim-gifs-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+        padding: 1rem 0;
+    }
+    
+    .bim-gif-wrapper {
+        margin: 0 auto;
+        max-width: 95%;
+    }
+    
+    .bim-gif {
+        height: 250px;
     }
     
     .footer-content {
