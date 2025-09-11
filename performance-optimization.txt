@@ -1,0 +1,66 @@
+# Web Performance Optimization Configuration
+# Configurações adicionais para melhorar a performance do site
+
+# Preload de recursos críticos (adicionar no <head>)
+<link rel="preload" href="fonts/Garet-Book.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Garet-Heavy.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="style.css" as="style">
+<link rel="preload" href="script.js" as="script">
+
+# DNS Prefetch para recursos externos
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="dns-prefetch" href="//cdn.emailjs.com">
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+
+# Preconnect para recursos críticos
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://cdn.emailjs.com" crossorigin>
+
+# Resource Hints para navegação
+<link rel="prefetch" href="portfolio.html">
+<link rel="prefetch" href="equipe.html">
+
+# Critical CSS inline (extrair CSS crítico e colocar inline no <head>)
+# Usar ferramentas como: https://www.sitelocity.com/critical-path-css-generator
+
+# Lazy loading para imagens (já implementado com loading="lazy")
+
+# Service Worker para cache (implementar se necessário)
+
+# Configurações de compressão de imagens:
+# - JPEG: qualidade 85-90%
+# - PNG: usar TinyPNG ou similar
+# - WebP: converter imagens principais
+# - AVIF: para navegadores compatíveis
+
+# Minificação de arquivos:
+# CSS: cssnano ou clean-css
+# JS: uglify-js ou terser
+# HTML: html-minifier
+
+# CDN Configuration (se usar):
+# - Configurar cache headers
+# - Gzip/Brotli compression
+# - HTTP/2 push para recursos críticos
+
+# Performance Budget:
+# - First Contentful Paint: < 1.5s
+# - Largest Contentful Paint: < 2.5s
+# - Cumulative Layout Shift: < 0.1
+# - First Input Delay: < 100ms
+# - Total page weight: < 1MB
+# - Number of requests: < 50
+
+# Monitoring Tools:
+# - Google PageSpeed Insights
+# - GTmetrix
+# - WebPageTest
+# - Lighthouse CI
+
+# Core Web Vitals optimization:
+# 1. Minimize render-blocking resources
+# 2. Optimize images and use modern formats
+# 3. Implement proper caching strategies
+# 4. Minimize DOM size
+# 5. Avoid layout shifts
+# 6. Optimize JavaScript execution

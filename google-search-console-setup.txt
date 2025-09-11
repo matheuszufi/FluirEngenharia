@@ -1,0 +1,30 @@
+# Google Search Console Configuration
+# Este arquivo deve ser substituído pelo arquivo de verificação real do Google Search Console
+# Para configurar:
+# 1. Acesse https://search.google.com/search-console
+# 2. Adicione sua propriedade (site)
+# 3. Faça download do arquivo de verificação HTML
+# 4. Substitua este arquivo pelo arquivo de verificação
+
+# Estrutura de URLs do site para indexação:
+# - https://fluirengenhariainstalacoes.com.br/
+# - https://fluirengenhariainstalacoes.com.br/portfolio.html
+# - https://fluirengenhariainstalacoes.com.br/equipe.html
+# - https://fluirengenhariainstalacoes.com.br/sitemap.html
+
+# Palavras-chave principais:
+# - projetos hidráulicos
+# - projetos hidrossanitários  
+# - modelagem BIM
+# - instalações prediais
+# - sistemas prevenção incêndio
+# - engenharia hidráulica
+# - fluir engenharia
+
+# Configurações recomendadas no Search Console:
+# 1. Enviar sitemap.xml
+# 2. Configurar domínio preferido (com ou sem www)
+# 3. Definir país de destino: Brasil
+# 4. Monitorar Core Web Vitals
+# 5. Verificar índice de páginas
+# 6. Acompanhar queries de pesquisa
