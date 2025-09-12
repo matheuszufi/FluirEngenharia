@@ -3034,6 +3034,38 @@ section h2 {
     text-align: center;
 }
 
+/* ================= PROJECT VIDEOS ================= */
+.project-videos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+    margin-top: 4rem;
+    padding: 0 1rem;
+}
+
+.video-wrapper {
+    position: relative;
+    background: var(--branco);
+    border-radius: var(--border-radius-grande);
+    overflow: hidden;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+    transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    height: 400px;
+}
+
+.video-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--sombra-hover);
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius-grande);
+    background: #000;
+}
+
 .sketchfab-embed-wrapper p a {
     color: #1CAAD9 !important;
     font-weight: bold !important;
@@ -3174,6 +3206,16 @@ section h2 {
     }
     
     .sketchfab-embed-wrapper {
+        height: 300px;
+    }
+    
+    .project-videos {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 0;
+    }
+    
+    .video-wrapper {
         height: 300px;
     }
     
@@ -3750,6 +3792,17 @@ section h2 {
     }
     
     .sketchfab-embed-wrapper {
+        width: 100%;
+        max-width: 100%;
+        height: 300px;
+    }
+    
+    .project-videos {
+        width: 100%;
+        padding: 0 5px;
+    }
+    
+    .video-wrapper {
         width: 100%;
         max-width: 100%;
         height: 300px;
