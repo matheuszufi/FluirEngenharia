@@ -1733,6 +1733,11 @@ header .container {
     width: 100%;
 }
 
+/* Reduzir espaçamento do subtítulo na seção de clientes */
+.clientes .section-subtitle {
+    margin: 0.5rem 0 0.5rem 0;
+}
+
 .clientes-description {
     font-size: clamp(1.05rem, 1.8vw, 1.2rem);
     color: var(--azul-primario);
@@ -1745,14 +1750,14 @@ header .container {
 
 .clientes-carousel {
     position: relative;
-    padding: 2rem 0;
+    padding: 0.5rem 0;
     max-width: 100%;
     overflow: hidden;
 }
 
 .clientes-logos {
     display: flex;
-    gap: 2.5rem;
+    gap: 1.5rem;
     align-items: center;
     justify-content: flex-start;
     transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1791,12 +1796,12 @@ header .container {
 /* Primeira div de logos dos clientes (White, Monpag, Mumajo, Urban Edge) - tamanho específico */
 .clientes-logos:not(.clientes-carousel .clientes-logos) {
     display: flex;
-    gap: 2rem;
+    /* gap: 2rem; */
     align-items: center;
     justify-content: center;
-    padding: 2rem 0;
+    padding: 0.5rem 0 0.5rem 0;
     flex-wrap: wrap;
-
+    margin-bottom: 1rem;
 }
 
 .clientes-logos:not(.clientes-carousel .clientes-logos) .cliente-logo {
@@ -1834,7 +1839,7 @@ header .container {
     /* background-color: var(--branco); */
     border: none;
     outline: none;
-    padding: 12px;
+    /* padding: 12px; */
     flex-shrink: 0;
     /* filter: grayscale(60%) brightness(0.9); */
     transform: scale(0.9);
