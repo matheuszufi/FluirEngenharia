@@ -389,7 +389,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">White Engenharia</h4>
-                            <p class="project-item-description">Construtor: White Engenharia | Arquitetônico: Cica Arquitetura</p>
+                            <p class="project-item-description">Construtor: White Engenharia <br/> Arquitetônico: Cica Arquitetura</p>
                         </div>
                     </div>
 
@@ -405,7 +405,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">White Engenharia II</h4>
-                            <p class="project-item-description">Construtor: White Engenharia | Arquitetônico: Cica Arquitetura</p>
+                            <p class="project-item-description">Construtor: White Engenharia <br/> Arquitetônico: Cica Arquitetura</p>
                         </div>
                     </div>
 
@@ -421,7 +421,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">Residência Eduardo Gomes</h4>
-                            <p class="project-item-description">Construtor: Eduardo Gomes | Arquitetônico: Giovanna Massari</p>
+                            <p class="project-item-description">Construtor: Eduardo Gomes <br/> Arquitetônico: Giovanna Massari</p>
                         </div>
                     </div>
 
@@ -453,7 +453,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">Condomínio Urban Edge</h4>
-                            <p class="project-item-description">Construtor: Urban Edge | Arquitetônico: Be Cool Arquitetura</p>
+                            <p class="project-item-description">Construtor: Urban Edge <br/> Arquitetônico: Be Cool Arquitetura</p>
                         </div>
                     </div>
 
@@ -579,7 +579,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">White Engenharia</h4>
-                            <p class="project-item-description">Construtor: White Engenharia | Arquitetônico: Cica Arquitetura</p>
+                            <p class="project-item-description">Construtor: White Engenharia <br/> Arquitetônico: Cica Arquitetura</p>
                         </div>
                     </div>
 
@@ -595,7 +595,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">White Engenharia II</h4>
-                            <p class="project-item-description">Construtor: White Engenharia | Arquitetônico: Cica Arquitetura</p>
+                            <p class="project-item-description">Construtor: White Engenharia <br/> Arquitetônico: Cica Arquitetura</p>
                         </div>
                     </div>
 
@@ -611,7 +611,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">Residência Eduardo Gomes</h4>
-                            <p class="project-item-description">Construtor: Eduardo Gomes | Arquitetônico: Giovanna Massari</p>
+                            <p class="project-item-description">Construtor: Eduardo Gomes <br/> Arquitetônico: Giovanna Massari</p>
                         </div>
                     </div>
 
@@ -654,7 +654,7 @@
     <!-- Commercial Projects Section -->
     <section id="projetos-prediais" class="portfolio scroll-element animate-fade-up">
         <div class="container">
-            <h2 class="scroll-element animate-fade-up">PROJETOS PREDIAIS</h2>
+            <h2 class="scroll-element animate-fade-up">PREDIAIS</h2>
           
              <div class="servicos-underline scroll-element animate-scale scroll-delay-300"></div>
             
@@ -673,7 +673,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">Edifício Comercial I</h4>
-                            <p class="project-item-description">Sistema hidráulico completo para edifício comercial com múltiplos pavimentos.</p>
+                            <p class="project-item-description">Edificio MCMV</p>
                         </div>
                     </div>
 
@@ -689,7 +689,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">Edifício Residencial</h4>
-                            <p class="project-item-description">Projeto hidrossanitário para edifício residencial com sistema de reúso de água.</p>
+                            <p class="project-item-description">Edificio Studios</p>
                         </div>
                     </div>
 
@@ -705,7 +705,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">Complexo Comercial</h4>
-                            <p class="project-item-description">Instalações hidráulicas para complexo comercial com sistema de prevenção contra incêndio.</p>
+                            <p class="project-item-description">Condomínio Vertical MCMV</p>
                         </div>
                     </div>
 
@@ -721,7 +721,7 @@
                         </div>
                         <div class="project-item-content">
                             <h4 class="project-item-title">Edifício Alto Padrão</h4>
-                            <p class="project-item-description">Projeto hidráulico sofisticado com automação e sustentabilidade ambiental.</p>
+                            <p class="project-item-description">Edifício Alto Padrão</p>
                         </div>
                     </div>
 
@@ -1545,6 +1545,29 @@
         handleScrollAnimation();
     }
 
+    // ========== INFINITE MARQUEE ==========
+    function initInfiniteMarquees() {
+        const marqueeContents = document.querySelectorAll('.project-marquee-content');
+        
+        marqueeContents.forEach(content => {
+            // Clone all children and append them to create seamless loop
+            const children = Array.from(content.children);
+            children.forEach(child => {
+                const clone = child.cloneNode(true);
+                content.appendChild(clone);
+            });
+            
+            // Calculate total width for perfect loop timing
+            const totalWidth = content.scrollWidth / 2; // Divided by 2 because we duplicated content
+            const itemWidth = 600 + 32; // 600px width + 2rem gap (32px)
+            const itemCount = children.length;
+            
+            // Adjust animation duration based on content length
+            const duration = itemCount * 8; // 8 seconds per item
+            content.style.animationDuration = `${duration}s`;
+        });
+    }
+
     // ========== INICIALIZAÇÃO GERAL ==========
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM Content Loaded - Initializing functions');
@@ -1554,6 +1577,9 @@
         projectTitles.forEach(title => {
             title.remove();
         });
+        
+        // Inicializar marquees infinitos
+        initInfiniteMarquees();
         
         // Inicializar apenas as funcionalidades ativas
         initTypingAnimation();

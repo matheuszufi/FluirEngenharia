@@ -192,6 +192,7 @@ body {
 /* Quando o elemento está visível */
 .scroll-element.animated {
     opacity: 1;
+    overflow: visible;
     transform: translateY(0) translateX(0) scale(1) rotate(0deg);
     filter: blur(0px);
 }
@@ -1510,8 +1511,7 @@ header .container {
     gap: 2rem;
     will-change: transform;
     padding: 0 2rem;
-
-    animation: marqueeScroll 50s linear infinite;
+    animation: marqueeScroll 60s linear infinite;
 }
 
 .project-marquee-content:hover {
@@ -1523,7 +1523,7 @@ header .container {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-100% - 2rem));
     }
 }
 
@@ -1535,21 +1535,19 @@ header .container {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     /* border-radius: 12px; */
-    overflow: hidden;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+    /* box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); */
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
 }
 
 .project-marquee-item:hover {
-    transform: translateY(-8px) scale(1.02);
+    /* transform: translateY(-8px) scale(1); */
     background: rgba(255, 255, 255, 0.35);
-    box-shadow: 0 20px 8px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 20px 8px rgba(0, 0, 0, 0.2); */
 }
 
-.project-marquee-item:hover .project-item-content {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.7) 60%, transparent 100%);
-}
+
 
 .project-item-images {
     display: flex;
@@ -1596,10 +1594,10 @@ header .container {
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 0.5rem;
+    padding: 0.5rem 0.5rem;
     text-align: center;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, transparent 100%);
-    backdrop-filter: blur(2px);
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 10%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0.2) 90%, transparent 100%);
+    /* backdrop-filter: blur(2px); */
     z-index: 2;
     transform: translateY(0);
     transition: transform 0.3s ease;
@@ -1616,13 +1614,15 @@ header .container {
 }
 
 .project-item-description {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(3, 38, 88, 0.95);
     font-family: 'Garet', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     line-height: 1.4;
     margin: 0;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    font-weight: 500;
+     transform: translateY(40px);
+     overflow: visible;
+    /* text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); */
+    font-weight: 700;
 }
 
 .project-item-badge {
@@ -1656,7 +1656,7 @@ header .container {
     }
     
     .project-marquee-content {
-        animation-duration: 40s;
+        animation-duration: 50s;
         padding: 0 1rem;
     }
 }
@@ -1686,7 +1686,7 @@ header .container {
     }
     
     .project-marquee-content {
-        animation-duration: 30s;
+        animation-duration: 40s;
         padding: 0 0.5rem;
     }
 }
