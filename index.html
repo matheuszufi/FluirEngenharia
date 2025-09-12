@@ -1549,6 +1549,12 @@
     document.addEventListener('DOMContentLoaded', function() {
         console.log('DOM Content Loaded - Initializing functions');
         
+        // Remover todos os h4 com classe project-item-title
+        const projectTitles = document.querySelectorAll('.project-item-title');
+        projectTitles.forEach(title => {
+            title.remove();
+        });
+        
         // Inicializar apenas as funcionalidades ativas
         initTypingAnimation();
         initExcelenciaNavigation();
