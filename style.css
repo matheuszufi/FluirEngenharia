@@ -1656,7 +1656,7 @@ header .container {
     }
     
     .project-marquee-content {
-        animation-duration: 50s;
+        animation-duration: 25s;
         padding: 0 1rem;
     }
 }
@@ -1681,12 +1681,16 @@ header .container {
         padding: 1rem;
     }
     
+    .project-item-description {
+        font-size: 1.1rem;
+    }
+    
     .project-item-title {
         font-size: 1.1rem;
     }
     
     .project-marquee-content {
-        animation-duration: 40s;
+        animation-duration: 15s;
         padding: 0 0.5rem;
     }
 }
