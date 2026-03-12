@@ -174,7 +174,7 @@ body {
 }
 
 .scroll-element.animate-slide-right {
-    transform: translateX(50px);
+    transform: translateX(0px);
 }
 
 .scroll-element.animate-scale {
@@ -2047,7 +2047,7 @@ header .container {
     align-items:flex-start;
     z-index: 3;
     text-align: center;
-}.quem-somos-stats
+}
 
 .quem-somos-content {
     display: grid;
@@ -2198,6 +2198,8 @@ header .container {
     opacity: 0.9;
 }
 
+/* ...existing code... */
+
 .quem-somos-stats {
     display: flex;
     justify-content: flex-start;
@@ -2207,7 +2209,7 @@ header .container {
     margin: 2.5rem;
     padding: 1.5rem;
     background: rgba(255, 255, 255, 0.15);
-    /* border-radius: 20px; */
+    border-radius: 20px;
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -2216,18 +2218,8 @@ header .container {
     overflow: hidden;
 }
 
-.quem-somos-stats::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -50%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-    transform: skewX(-15deg);
-    animation: glass-shine 3s infinite;
-    pointer-events: none;
-}
+
+/* ...existing code... */
 
 .highlight-sobrenos {
     color: white;
@@ -2237,7 +2229,7 @@ header .container {
 
 @keyframes glass-shine {
     0% { left: -50%; }
-    100% { left: 150%; }
+    100% { left: 100%; }
 }
 
 .quem-somos-stats .stat-item {
